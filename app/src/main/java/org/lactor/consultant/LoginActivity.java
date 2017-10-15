@@ -17,8 +17,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
-    private EditText emailEditText;
-    private EditText passwordEditText;
+    private EditText mEmailEditText;
+    private EditText mPasswordEditText;
 
 
     @Override
@@ -28,8 +28,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.register_button).setOnClickListener(this );
         findViewById(R.id.login_button).setOnClickListener(this );
 
-        emailEditText = (EditText) findViewById(R.id.email_edittext);
-        passwordEditText = (EditText) findViewById(R.id.password);
+        mEmailEditText = (EditText) findViewById(R.id.email_edittext);
+        mPasswordEditText = (EditText) findViewById(R.id.password);
     }
 
     public void startAccountCreationActivity(){
@@ -48,8 +48,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.login_button:
                 LactorAPIHelper.getInstance().login(
                         new LoginRequest(
-                                emailEditText.getText().toString(),
-                                passwordEditText.getText().toString()
+                                mEmailEditText.getText().toString(),
+                                mPasswordEditText.getText().toString()
                         )
                 ).enqueue(new Callback<LoginReturn>() {
                     @Override
