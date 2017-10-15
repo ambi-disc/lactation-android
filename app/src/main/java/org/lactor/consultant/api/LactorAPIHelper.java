@@ -3,9 +3,6 @@ package org.lactor.consultant.api;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-/**
- * Created by nbeesett on 10/1/17.
- */
 public class LactorAPIHelper {
     private static LactorAPI lactorAPI;
     private static String APIurl = "http://eclipse.matthewpage.xyz:5000/";
