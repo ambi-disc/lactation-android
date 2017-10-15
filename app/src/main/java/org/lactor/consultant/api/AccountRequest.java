@@ -1,6 +1,6 @@
 package org.lactor.consultant.api;
 
-public class AccountRequest {
+public class AccountCreationRequest {
 
     public String firstName;
     public String lastName;
