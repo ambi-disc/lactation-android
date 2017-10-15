@@ -14,11 +14,11 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class AccountCreationActivity extends AppCompatActivity implements View.OnClickListener {
-    private EditText firstname;
-    private EditText lastname;
-    private EditText password;
-    private EditText organization;
-    private EditText email;
+    private EditText mFirstNameEditText;
+    private EditText mLastNameEditText;
+    private EditText mPasswordEditText;
+    private EditText mOrganizationEditText;
+    private EditText mEmailEditText;
 
 
     @Override
@@ -28,10 +28,10 @@ public class AccountCreationActivity extends AppCompatActivity implements View.O
         setContentView(R.layout.activity_account_creation);
         findViewById(R.id.button_submit).setOnClickListener(this);
 
-        firstname = (EditText) findViewById(R.id.firstname);
-        lastname = (EditText) findViewById(R.id.lastname);
-        password = (EditText) findViewById(R.id.password);
-        organization = (EditText) findViewById(R.id.organization);
+        firstname = (EditText) findViewById(R.id.mFirstNameEditText);
+        lastname = (EditText) findViewById(R.id.mLastNameEditText);
+        password = (EditText) findViewById(R.id.mPasswordEditText);
+        organization = (EditText) findViewById(R.id.mOrganizationEditText);
         email = (EditText) findViewById(R.id.email);
 
     }
@@ -42,10 +42,10 @@ public class AccountCreationActivity extends AppCompatActivity implements View.O
             case R.id.login_button:
                 LactorAPIHelper.getInstance().createAccount(
                         new AccountRequest(
-                                firstname.getText().toString(),
-                            lastname.getText().toString(),
-                            organization.getText().toString(),
-                            password.getText().toString()
+                                mFirstNameEditTExt.getText().toString(),
+                            mLastNameEditText.getText().toString(),
+                            mOrganizationEditText.getText().toString(),
+                            mPasswordEditText.getText().toString()
                         )
                 ).enqueue(new Callback<LoginReturn>() {
                     @Override
