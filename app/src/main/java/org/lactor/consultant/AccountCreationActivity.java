@@ -16,7 +16,6 @@ import retrofit2.Response;
 public class AccountCreationActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText firstname;
     private EditText lastname;
-    private EditText username;
     private EditText password;
     private EditText organization;
     private EditText email;
@@ -31,7 +30,6 @@ public class AccountCreationActivity extends AppCompatActivity implements View.O
 
         firstname = (EditText) findViewById(R.id.firstname);
         lastname = (EditText) findViewById(R.id.lastname);
-        username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
         organization = (EditText) findViewById(R.id.organization);
         email = (EditText) findViewById(R.id.email);
@@ -46,7 +44,6 @@ public class AccountCreationActivity extends AppCompatActivity implements View.O
                         new AccountRequest(
                                 firstname.getText().toString(),
                             lastname.getText().toString(),
-                            username.getText().toString(),
                             organization.getText().toString(),
                             password.getText().toString()
                         )
