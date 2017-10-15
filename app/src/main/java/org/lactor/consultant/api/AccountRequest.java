@@ -5,6 +5,8 @@ public class AccountRequest {
     public String firstName;
     public String lastName;
     public String emailAddress;
+    public String profession;
+    public String password;
 
     public AccountRequest(String firstName, String lastName, String emailAddress, String profession, String password) {
 
@@ -13,8 +15,5 @@ public class AccountRequest {
         this.emailAddress = emailAddress;
         this.profession = profession;
         this.password = password;
-    }
-
-    public String profession;
-    public String password;
+    }   
 }
