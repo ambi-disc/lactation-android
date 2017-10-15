@@ -6,9 +6,6 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
-/**
- * Created by nbeesett on 10/1/17.
- */
 public interface LactorAPI {
 
     @POST("/account/create")
@@ -19,6 +16,4 @@ public interface LactorAPI {
 
     @GET("/account/verify_token")
     Call<Boolean> verifyToken(@Query("authToken") String authToken);
-
-
 }
