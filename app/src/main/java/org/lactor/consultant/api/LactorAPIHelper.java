@@ -3,19 +3,19 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class LactorAPIHelper {
-    private static LactorAPI lactorAPI;
-    private static String APIurl = "http://eclipse.matthewpage.xyz:5000/";
+    private static LactorApi lactorApi;
+    private static String apiUrl = "http://eclipse.matthewpage.xyz:5000/";
 
         public static LactorAPI getInstance() {
-            if (lactorAPI == null) {
+            if (lactorApi == null) {
                 Retrofit retrofit = new Retrofit.Builder()
-                        .baseUrl(APIurl)
+                        .baseUrl(apiUrl)
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
-                lactorAPI = retrofit.create(LactorAPI.class);
+                lactorApi = retrofit.create(LactorApi.class);
             }
 
-            return lactorAPI;
+            return lactorApi;
         }
     }
 }
