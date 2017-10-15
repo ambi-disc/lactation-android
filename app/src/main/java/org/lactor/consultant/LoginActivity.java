@@ -35,8 +35,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void startAccountCreationActivity(){
         Intent startNewActivity = new Intent(this, AccountCreationActivity.class);
         startActivity(startNewActivity);
-
-
     }
 
     @Override
