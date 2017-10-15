@@ -78,7 +78,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             // show it
                             alertDialog.show();
 
-                        }else {
+                        } else {
                             System.out.println("You are logged in");
 
                             //we need to finish this TODO
