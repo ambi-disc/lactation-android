@@ -1,8 +1,5 @@
 package org.lactor.consultant.api;
 
-/**
- * Created by nbeesett on 10/1/17.
- */
 public class AccountRequest {
 
     public String firstName;
