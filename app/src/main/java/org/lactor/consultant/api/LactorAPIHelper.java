@@ -13,7 +13,6 @@ public class LactorAPIHelper {
                         .baseUrl(APIurl)
                         .addConverterFactory(GsonConverterFactory.create())
                         .build();
-
                 lactorAPI = retrofit.create(LactorAPI.class);
             }
 
