@@ -1,11 +1,10 @@
 package org.lactor.consultant.api;
 
-public class LoginReturn {
-
-    private boolean success;
-    private String authToken;
-    private String timeoutStamp;
-    private String errorMessage;
+public class LoginResult {
+    public boolean success;
+    public String authToken;
+    public String timeoutStamp;
+    public String errorMessage;
 
     public boolean isSuccess() {
         return success;
