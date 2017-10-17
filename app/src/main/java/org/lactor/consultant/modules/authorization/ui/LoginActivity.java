@@ -1,4 +1,4 @@
-package org.lactor.consultant;
+package org.lactor.consultant.modules.authorization.ui;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,9 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
+import org.lactor.consultant.R;
 import org.lactor.consultant.api.LactorAPIHelper;
-import org.lactor.consultant.api.LoginRequest;
-import org.lactor.consultant.api.LoginReturn;
+import org.lactor.consultant.modules.authorization.webrequests.LoginRequest;
+import org.lactor.consultant.modules.authorization.webrequests.LoginResult;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -49,9 +50,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 mEmailEditText.getText().toString(),
                                 mPasswordEditText.getText().toString()
                         )
-                ).enqueue(new Callback<LoginReturn>() {
+                ).enqueue(new Callback<LoginResult>() {
                     @Override
-                    public void onResponse(Call<LoginReturn> call, Response<LoginReturn> response) {
+                    public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
                         if (!response.isSuccessful()) {
                             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                                     getApplicationContext());
@@ -86,7 +87,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
 
                     @Override
-                    public void onFailure(Call<LoginReturn> call, Throwable t) {
+                    public void onFailure(Call<LoginResult> call, Throwable t) {
 
                     }
                 });
