@@ -8,10 +8,100 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="org.lactor.consultant.LoginActivity">
+    tools:context="org.lactor.consultant.LoginActivity"
+    android:background="#009688"
+    android:scaleType="centerCrop">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:paddingTop="100dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:orientation= "vertical"
+        android:weightSum="1"
+        android:layout_gravity="top|bottom|right"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="LACTOR Android"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textStyle= "bold"
+            android:textSize="32sp"
+            android:gravity="center|top"
+            android:layout_weight="0.15"
+            android:layout_gravity="center_horizontal" />
+
+
+        <EditText
+            android:id="@+id/email_edittext"
+            android:padding= "20dp"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:textColorHint="#fff"
+            android:background="@drawable/edittextstyle"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+
+            android:hint="Username"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:textColor="#fff"
+            android:gravity="center"
+            android:textColorHint="#fff"
+            android:background="@drawable/edittextstyle"
+            android:layout_marginTop="10dp"
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:inputType="textPassword"
+            android:hint="Password"/>
+
+        <Button
+            android:id="@+id/login_button"
+            android:gravity="center"
+            android:textColor="#009688"
+            android:background="#fff"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:text="Login"
+            android:layout_height="60dp"
+            android:padding="15dp"
+            android:layout_weight="0.36" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forgot Password?"
+            android:textColor="#fff"
+            android:background="#009688"
+            android:layout_gravity="right"
+            android:padding="15dp"
+             />
+
+        <Button
+            android:id="@+id/register_button"
+            android:textColor="#fff"
+            android:text = "@string/button_register"
+            android:gravity="center"
+            android:textColorHint="#fff"
+            android:background="#009688"
+            android:layout_marginTop="5dp"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:hint="Register"/>
+
+
+    </LinearLayout>
+
+
 </RelativeLayout>
