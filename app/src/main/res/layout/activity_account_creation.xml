@@ -7,8 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#009688"
-    tools:context=".modules.authorization.ui.AccountCreationActivity">
+    android:background="@color/turquoise"
+    tools:context="org.lactor.consultant.AccountCreationActivity">
 
     <LinearLayout
         android:paddingTop="100dp"
@@ -24,101 +24,99 @@
         <EditText
             android:id="@+id/firstname"
             android:padding= "10dp"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:gravity="center"
-            android:textColorHint="#fff"
+            android:textColorHint="@color/white"
             android:background="@drawable/edittextstyle"
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
             android:textStyle="bold"
 
-            android:hint="First Name"/>
+            android:hint="@string/firstName"/>
 
         <EditText
             android:id="@+id/lastname"
             android:padding= "10dp"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:gravity="center"
-            android:textColorHint="#fff"
+            android:textColorHint="@color/white"
             android:background="@drawable/edittextstyle"
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
             android:textStyle="bold"
 
-            android:hint="Last Name"/>
+            android:hint="@string/lastName"/>
 
         <EditText
             android:id="@+id/username"
             android:padding= "10dp"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:gravity="center"
-            android:textColorHint="#fff"
+            android:textColorHint="@color/white"
             android:background="@drawable/edittextstyle"
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
             android:textStyle="bold"
 
-            android:hint="Username"/>
+            android:hint="@string/username"/>
 
         <EditText
             android:id="@+id/password"
             android:padding= "10dp"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:gravity="center"
-            android:textColorHint="#fff"
+            android:textColorHint="@color/white"
             android:background="@drawable/edittextstyle"
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
             android:textStyle="bold"
 
-            android:hint="Password"/>
+            android:hint="@string/password"/>
 
-        <EditText
+        <Spinner
             android:id="@+id/organization"
             android:padding= "10dp"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:gravity="center"
-            android:textColorHint="#fff"
+            android:textColorHint="@color/white"
             android:background="@drawable/edittextstyle"
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
             android:textStyle="bold"
-
-            android:hint="Organization"/>
+            android:entries="@array/organization"/>
 
         <EditText
             android:id="@+id/email"
             android:padding= "10dp"
-            android:textColor="#fff"
+            android:textColor="@color/white"
             android:gravity="center"
-            android:textColorHint="#fff"
+            android:textColorHint="@color/white"
             android:background="@drawable/edittextstyle"
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:layout_gravity="center"
             android:textStyle="bold"
 
-            android:hint="Email"/>
+            android:hint="@string/Email"/>
 
         <Button
             android:id="@+id/button_submit"
-            android:textColor="#009688"
-            android:text = "@string/button_submit"
+            android:textColor="@color/turquoise"
             android:gravity="center"
-            android:background="#fff"
-            android:textColorHint="#fff"
+            android:background="@color/white"
+            android:textColorHint="@color/black"
             android:layout_marginTop="65dp"
             android:layout_width="300dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textSize="15sp"
-            android:hint="Submit"/>
+            android:hint="@string/submit"/>
 
 
     </LinearLayout>
@@ -126,8 +124,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Account Registration"
-        android:textColor="#fff"
+        android:text="@string/acct_reg"
+        android:textColor="@color/white"
         android:padding="10dp"
         android:textStyle= "bold"
         android:textSize="32sp"
@@ -137,4 +135,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         />
+<<<<<<< HEAD
+
 </RelativeLayout>
+=======
+</RelativeLayout>
+>>>>>>> 3f855208fd6eb4205bb98e225dd5d9aeefa0bd60
