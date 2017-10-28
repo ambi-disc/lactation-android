@@ -1,4 +1,4 @@
-package org.lactor.consultant.api;
+package org.lactor.consultant.authentication.webrequests;
 
 public class LoginRequest {
     public String email;

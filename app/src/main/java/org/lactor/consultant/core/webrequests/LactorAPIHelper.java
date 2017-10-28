@@ -1,12 +1,12 @@
-package org.lactor.consultant.api;
+package org.lactor.consultant.core.webrequests;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class LactorAPIHelper {
+public class LactorApiHelper {
     private static LactorApi lactorApi;
-    private static String apiUrl = "http://eclipse.matthewpage.xyz:5000/";
+    private static String apiUrl = "http://hypermoon.matthewpage.xyz:5000/";
 
-    public static LactorAPI getInstance() {
+    public static LactorApi getInstance() {
         if (lactorApi == null) {
             Retrofit retrofit = new Retrofit.Builder()
                     .baseUrl(apiUrl)

@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:background="@color/turquoise"
-    tools:context="org.lactor.consultant.AccountCreationActivity">
+    tools:context="org.lactor.consultant.authentication.ui.AccountCreationActivity">
 
     <LinearLayout
         android:paddingTop="100dp"
@@ -88,7 +88,8 @@
             android:layout_height="55dp"
             android:layout_gravity="center"
             android:textStyle="bold"
-            android:entries="@array/organization"/>
+            android:entries="@array/organization"
+            android:forceHasOverlappingRendering="false" />
 
         <EditText
             android:id="@+id/email"
@@ -135,9 +136,5 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         />
-<<<<<<< HEAD
 
 </RelativeLayout>
-=======
-</RelativeLayout>
->>>>>>> 3f855208fd6eb4205bb98e225dd5d9aeefa0bd60

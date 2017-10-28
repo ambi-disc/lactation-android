@@ -1,4 +1,4 @@
-package org.lactor.consultant;
+package org.lactor.consultant.homepage.ui;
 
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -6,14 +6,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+import org.lactor.consultant.R;
+
+public class MotherInfo extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
-
-    public MainActivity(DrawerLayout mDrawerLayout) {
-        this.mDrawerLayout = mDrawerLayout;
-    }
+    public static final String EXTRA_LOGIN_TOKEN = "LoginToken";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,3 +45,4 @@ public class MainActivity extends AppCompatActivity {
     }
 
 }
+

@@ -1,4 +1,4 @@
-package org.lactor.consultant.api;
+package org.lactor.consultant.authentication.webrequests;
 
 public class AccountCreationRequest {
 
@@ -8,7 +8,7 @@ public class AccountCreationRequest {
     public String profession;
     public String password;
 
-    public AccountRequest(String firstName, String lastName, String emailAddress, String profession, String password) {
+    public AccountCreationRequest(String firstName, String lastName, String emailAddress, String profession, String password) {
 
         this.firstName = firstName;
         this.lastName = lastName;

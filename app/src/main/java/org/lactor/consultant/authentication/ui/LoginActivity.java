@@ -1,4 +1,4 @@
-package org.lactor.consultant;
+package org.lactor.consultant.authentication.ui;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -8,9 +8,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import org.lactor.consultant.api.LactorAPIHelper;
-import org.lactor.consultant.api.LoginRequest;
-import org.lactor.consultant.api.LoginReturn;
+import org.lactor.consultant.R;
+import org.lactor.consultant.authentication.webrequests.LoginResult;
+import org.lactor.consultant.core.webrequests.LactorApiHelper;
+import org.lactor.consultant.authentication.webrequests.LoginRequest;
+import org.lactor.consultant.homepage.ui.Inbox;
+import org.lactor.consultant.homepage.ui.MainActivity;
+import org.lactor.consultant.homepage.ui.MotherInfo;
+import org.lactor.consultant.homepage.ui.SettingsPage;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -30,6 +35,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         mEmailEditText = (EditText) findViewById(R.id.email_edittext);
         mPasswordEditText = (EditText) findViewById(R.id.password);
+
+//        System.out.println("*************************************************");
+//        System.out.println("************ ON_CREATE ************");
+//        System.out.println("*************************************************");
     }
 
     public void startAccountCreationActivity(){
@@ -44,14 +53,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startAccountCreationActivity();
                 break;
             case R.id.login_button:
-                LactorAPIHelper.getInstance().login(
+                LactorApiHelper.getInstance().login(
                         new LoginRequest(
                                 mEmailEditText.getText().toString(),
                                 mPasswordEditText.getText().toString()
                         )
-                ).enqueue(new Callback<LoginReturn>() {
+                ).enqueue(new Callback<LoginResult>() {
                     @Override
-                    public void onResponse(Call<LoginReturn> call, Response<LoginReturn> response) {
+                    public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
                         if (!response.isSuccessful()) {
                             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                                     getApplicationContext());
@@ -81,12 +90,44 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         } else {
                             System.out.println("You are logged in");
 
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            intent.putExtra(
+                                    MainActivity.EXTRA_LOGIN_TOKEN,
+                                    response.body().getAuthToken()
+                            );
+                            startActivity(intent);
+
+//                            Intent intent2 = new Intent(getApplicationContext(), MotherInfo.class);
+//                            intent2.putExtra(
+//                                    MotherInfo.EXTRA_LOGIN_TOKEN,
+//                                    response.body().getAuthToken()
+//
+//
+//                            );
+//                            startActivity(intent2);
+//
+//                            Intent intent3 = new Intent(getApplicationContext(), SettingsPage.class);
+//                            intent3.putExtra(
+//                                    SettingsPage.EXTRA_LOGIN_TOKEN,
+//                                    response.body().getAuthToken()
+//                            );
+//                            startActivity(intent3);
+//
+//                            Intent intent4 = new Intent(getApplicationContext(), Inbox.class);
+//                            intent4.putExtra(
+//                                    Inbox.EXTRA_LOGIN_TOKEN,
+//                                    response.body().getAuthToken()
+//
+//                            );
+//                            startActivity(intent4);
+
+
                             //we need to finish this TODO
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<LoginReturn> call, Throwable t) {
+                    public void onFailure(Call<LoginResult> call, Throwable t) {
 
                     }
                 });

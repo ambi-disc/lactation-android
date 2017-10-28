@@ -1,9 +1,9 @@
-package org.lactor.consultant.api;
+package org.lactor.consultant.authentication.webrequests;
 
 public class LoginResult {
     public boolean success;
     public String authToken;
-    public String timeoutStamp;
+    public String timeoutTimestamp;
     public String errorMessage;
 
     public boolean isSuccess() {
@@ -15,7 +15,7 @@ public class LoginResult {
     }
 
     public String getTimeoutStamp() {
-        return timeoutStamp;
+        return timeoutTimestamp;
     }
 
     public String getErrorMessage() {

@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 24
-    buildToolsVersion "24.0.1"
+    buildToolsVersion "26.0.2"
 
     defaultConfig {
         applicationId "org.lactor.consultant"
@@ -27,4 +27,6 @@ dependencies {
     compile 'com.squareup.retrofit2:retrofit:2.3.0'
 
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+
+
 }
