@@ -78,19 +78,30 @@ public class MainActivity extends AppCompatActivity implements PreferencesFragme
     }
 
     private void selectItemFromDrawer(int position) {
-        Fragment fragment = new PreferencesFragment();
+        switch (position) {
+            case 0:
+                Fragment fragment = new PreferencesFragment();
 
-        FragmentManager fragmentManager = getFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.mainContent, fragment)
-                .commit();
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.mainContent, fragment)
+                        .commit();
 
-        mDrawerList.setItemChecked(position, true);
-        setTitle(mNavItems.get(position).mTitle);
+                mDrawerList.setItemChecked(position, true);
+                setTitle(mNavItems.get(position).mTitle);
 
-        // Close the drawer
-        mDrawerLayout.closeDrawer(mDrawerPane);
-        Toast.makeText(getApplicationContext(), "Position: " + position, Toast.LENGTH_LONG).show();
+                // Close the drawer
+                mDrawerLayout.closeDrawer(mDrawerPane);
+                Toast.makeText(getApplicationContext(), "Position: " + position, Toast.LENGTH_LONG).show();
+                break;
+            case 1:
+                // TODO
+                break;
+            case 2:
+                // TOOD
+                break;
+        }
+
     }
 
     @Override
