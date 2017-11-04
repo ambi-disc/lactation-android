@@ -10,7 +10,7 @@ import android.widget.EditText;
 
 import org.lactor.consultant.R;
 import org.lactor.consultant.authentication.webrequests.LoginResult;
-import org.lactor.consultant.core.webrequests.LactorApiHelperBlah;
+import org.lactor.consultant.core.webrequests.LactorApiHelper;
 import org.lactor.consultant.authentication.webrequests.LoginRequest;
 import org.lactor.consultant.homepage.ui.MainActivity;
 
@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 startAccountCreationActivity();
                 break;
             case R.id.login_button:
-                LactorApiHelperBlah.getInstance().login(
+                LactorApiHelper.getInstance().login(
                         new LoginRequest(
                                 mEmailEditText.getText().toString(),
                                 mPasswordEditText.getText().toString()

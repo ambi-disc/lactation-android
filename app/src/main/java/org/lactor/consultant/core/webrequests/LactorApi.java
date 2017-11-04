@@ -10,7 +10,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
-public interface LactorApiBlah {
+public interface LactorApi {
 
     @POST("/account/create")
     Call<LoginResult> createAccount(@Body AccountCreationRequest accountRequest);

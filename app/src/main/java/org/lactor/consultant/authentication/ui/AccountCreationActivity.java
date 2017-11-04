@@ -12,7 +12,7 @@ import android.widget.Spinner;
 import org.lactor.consultant.R;
 import org.lactor.consultant.authentication.webrequests.AccountCreationRequest;
 import org.lactor.consultant.authentication.webrequests.LoginResult;
-import org.lactor.consultant.core.webrequests.LactorApiHelperBlah;
+import org.lactor.consultant.core.webrequests.LactorApiHelper;
 import org.lactor.consultant.inbox.ui.Inbox;
 import org.lactor.consultant.homepage.ui.MainActivity;
 import org.lactor.consultant.mother.ui.MotherInfo;
@@ -62,7 +62,7 @@ public class AccountCreationActivity extends AppCompatActivity implements View.O
     public void onClick(View view) {
         switch(view.getId()) {
             case R.id.login_button:
-                LactorApiHelperBlah.getInstance().createAccount(
+                LactorApiHelper.getInstance().createAccount(
                         new AccountCreationRequest(
                                 mFirstNameEditText.getText().toString(),
                                 mLastNameEditText.getText().toString(),
