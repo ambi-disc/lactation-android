@@ -1,4 +1,4 @@
-package org.lactor.consultant.homepage.ui;
+package org.lactor.consultant.inbox.ui;
 
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;

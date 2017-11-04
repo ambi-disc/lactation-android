@@ -24,10 +24,10 @@
         <activity android:name=".homepage.ui.MainActivity">
 
         </activity>
-        <activity android:name=".homepage.ui.Inbox" />
-        <activity android:name=".homepage.ui.MotherInfo" />
-        <activity android:name=".homepage.ui.SettingsPage" />
-        <activity android:name=".homepage.ui.EducationalMaterials"></activity>
+        <activity android:name=".inbox.ui.Inbox" />
+        <activity android:name=".mother.ui.MotherInfo" />
+        <activity android:name=".settings.ui.SettingsPage" />
+        <activity android:name=".educational.ui.EducationalMaterials"></activity>
     </application>
 
 </manifest>

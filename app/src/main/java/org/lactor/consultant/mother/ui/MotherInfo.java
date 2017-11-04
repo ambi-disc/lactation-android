@@ -1,4 +1,4 @@
-package org.lactor.consultant.homepage.ui;
+package org.lactor.consultant.mother.ui;
 
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;

@@ -12,10 +12,7 @@ import org.lactor.consultant.R;
 import org.lactor.consultant.authentication.webrequests.LoginResult;
 import org.lactor.consultant.core.webrequests.LactorApiHelper;
 import org.lactor.consultant.authentication.webrequests.LoginRequest;
-import org.lactor.consultant.homepage.ui.Inbox;
 import org.lactor.consultant.homepage.ui.MainActivity;
-import org.lactor.consultant.homepage.ui.MotherInfo;
-import org.lactor.consultant.homepage.ui.SettingsPage;
 
 import retrofit2.Call;
 import retrofit2.Callback;

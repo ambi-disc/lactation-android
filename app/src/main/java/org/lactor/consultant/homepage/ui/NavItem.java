@@ -1,9 +1,13 @@
 package org.lactor.consultant.homepage.ui;
 
-/**
- * @Author Matthew Page
- * @Date 11/4/17
- */
-
 public class NavItem {
+    String mTitle;
+    String mSubtitle;
+    int mIcon;
+
+    public NavItem(String title, String subtitle, int icon) {
+        mTitle = title;
+        mSubtitle = subtitle;
+        mIcon = icon;
+    }
 }
