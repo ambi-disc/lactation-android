@@ -110,9 +110,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                            );
 //                            startActivity(intent3);
 //
-//                            Intent intent4 = new Intent(getApplicationContext(), Inbox.class);
+//                            Intent intent4 = new Intent(getApplicationContext(), InboxFragment.class);
 //                            intent4.putExtra(
-//                                    Inbox.EXTRA_LOGIN_TOKEN,
+//                                    InboxFragment.EXTRA_LOGIN_TOKEN,
 //                                    response.body().getAuthToken()
 //
 //                            );

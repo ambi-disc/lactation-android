@@ -12,13 +12,25 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
+import org.lactor.consultant.AccountsFragment;
+import org.lactor.consultant.DisplayDataFragment;
+import org.lactor.consultant.ProfileFragment;
 import org.lactor.consultant.R;
+import org.lactor.consultant.InboxFragment;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements PreferencesFragment.OnFragmentInteractionListener {
+public class MainActivity
+        extends AppCompatActivity
+        implements PreferencesFragment.OnFragmentInteractionListener,
+                   DashboardFragment.OnFragmentInteractionListener,
+                   NotificationsFragment.OnFragmentInteractionListener,
+                   InboxFragment.OnFragmentInteractionListener,
+                   AccountsFragment.OnFragmentInteractionListener,
+                   DisplayDataFragment.OnFragmentInteractionListener,
+                   ProfileFragment.OnFragmentInteractionListener,
+        View.OnClickListener {
 
     public static final String EXTRA_LOGIN_TOKEN = "LoginToken";
 
@@ -35,9 +47,12 @@ public class MainActivity extends AppCompatActivity implements PreferencesFragme
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mNavItems.add(new NavItem("Home", "Meetup destination", R.drawable.ic_action_home));
-        mNavItems.add(new NavItem("Preferences", "Change your preferences", R.drawable.ic_action_settings));
-        mNavItems.add(new NavItem("About", "Get to know about us", R.drawable.ic_action_about));
+        mNavItems.add(new NavItem("Dashboard", "See Mother's Information", R.drawable.ic_action_dashboard));
+        mNavItems.add(new NavItem("Notifications", "Notification Query Values", R.drawable.ic_action_settings));
+        mNavItems.add(new NavItem("Display Data", "Diary Query Values", R.drawable.ic_action_about));
+        mNavItems.add(new NavItem("Inbox", "Unread Messages", R.drawable.ic_action_about));
+        mNavItems.add(new NavItem("Accounts", "Manage Users", R.drawable.ic_action_about));
+
 
         // DrawerLayout
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
@@ -73,12 +88,30 @@ public class MainActivity extends AppCompatActivity implements PreferencesFragme
         };
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
+        findViewById(R.id.profileBox).setOnClickListener(this);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void selectItemFromDrawer(int position) {
-        Fragment fragment = new PreferencesFragment();
+        Fragment fragment = null;
+        switch(position){
+            case 0:
+                fragment = new DashboardFragment();
+                break;
+            case 1:
+                fragment = new NotificationsFragment();
+                break;
+            case 2:
+                fragment = new DisplayDataFragment();
+                break;
+            case 3:
+                fragment = new InboxFragment();
+                break;
+            case 4:
+                fragment = new AccountsFragment();
+                break;
+        }
 
         FragmentManager fragmentManager = getFragmentManager();
         fragmentManager.beginTransaction()
@@ -87,10 +120,7 @@ public class MainActivity extends AppCompatActivity implements PreferencesFragme
 
         mDrawerList.setItemChecked(position, true);
         setTitle(mNavItems.get(position).mTitle);
-
-        // Close the drawer
         mDrawerLayout.closeDrawer(mDrawerPane);
-        Toast.makeText(getApplicationContext(), "Position: " + position, Toast.LENGTH_LONG).show();
     }
 
     @Override
@@ -116,6 +146,20 @@ public class MainActivity extends AppCompatActivity implements PreferencesFragme
     @Override
     public void onFragmentInteraction(Uri uri) {
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.profileBox:
+                Fragment fragment = new ProfileFragment();
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction()
+                        .replace(R.id.mainContent, fragment)
+                        .commit();
+                setTitle("Your Profile");
+                mDrawerLayout.closeDrawer(mDrawerPane);
+        }
     }
 
     /*
