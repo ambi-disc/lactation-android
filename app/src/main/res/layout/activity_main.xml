@@ -9,7 +9,11 @@
     <RelativeLayout
         android:id="@+id/mainContent"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:background="#009688"
+        android:text="@string/welcome_to_the_lactation_consultant_portal"
+        android:textSize="30sp"
+        android:weightSum="1"/>
 
     <!-- The navigation drawer -->
     <RelativeLayout
@@ -47,7 +51,7 @@
                     android:id="@+id/userName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Rishabh"
+                    android:text="Admin"
                     android:textColor="#fff"
                     android:textSize="16sp"
                     android:textStyle="bold" />
