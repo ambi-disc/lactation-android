@@ -13,11 +13,14 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import org.lactor.consultant.AccountsFragment;
-import org.lactor.consultant.DisplayDataFragment;
-import org.lactor.consultant.ProfileFragment;
+import org.lactor.consultant.account.ui.AccountsFragment;
+import org.lactor.consultant.displaydata.ui.DisplayDataFragment;
+import org.lactor.consultant.profile.fragment.ProfileFragment;
 import org.lactor.consultant.R;
-import org.lactor.consultant.InboxFragment;
+import org.lactor.consultant.inbox.ui.InboxFragment;
+import org.lactor.consultant.dashboard.ui.DashboardFragment;
+import org.lactor.consultant.notifications.ui.NotificationsFragment;
+import org.lactor.consultant.preferences.ui.PreferencesFragment;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package org.lactor.consultant.homepage.ui;
+package org.lactor.consultant.preferences.ui;
 
 import android.app.Fragment;
 import android.content.Context;

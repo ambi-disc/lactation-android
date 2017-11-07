@@ -1,4 +1,4 @@
-package org.lactor.consultant;
+package org.lactor.consultant.notifications.ui;
 
 import android.content.Context;
 import android.net.Uri;
@@ -8,16 +8,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.lactor.consultant.R;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link DisplayDataFragment.OnFragmentInteractionListener} interface
+ * {@link NotificationsFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link DisplayDataFragment#newInstance} factory method to
+ * Use the {@link NotificationsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class DisplayDataFragment extends Fragment {
+public class NotificationsFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,7 +30,7 @@ public class DisplayDataFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public DisplayDataFragment() {
+    public NotificationsFragment() {
         // Required empty public constructor
     }
 
@@ -39,11 +40,11 @@ public class DisplayDataFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment DisplayDataFragment.
+     * @return A new instance of fragment NotificationsFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static DisplayDataFragment newInstance(String param1, String param2) {
-        DisplayDataFragment fragment = new DisplayDataFragment();
+    public static NotificationsFragment newInstance(String param1, String param2) {
+        NotificationsFragment fragment = new NotificationsFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,7 +65,7 @@ public class DisplayDataFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_display_data, container, false);
+        return inflater.inflate(R.layout.fragment_notifications, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

@@ -1,8 +1,8 @@
 package org.lactor.consultant.authentication.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,10 +13,7 @@ import org.lactor.consultant.R;
 import org.lactor.consultant.authentication.webrequests.AccountCreationRequest;
 import org.lactor.consultant.authentication.webrequests.LoginResult;
 import org.lactor.consultant.core.webrequests.LactorApiHelper;
-import org.lactor.consultant.inbox.ui.Inbox;
 import org.lactor.consultant.homepage.ui.MainActivity;
-import org.lactor.consultant.mother.ui.MotherInfo;
-import org.lactor.consultant.settings.ui.SettingsPage;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -81,32 +78,6 @@ public class AccountCreationActivity extends AppCompatActivity implements View.O
                                 response.body().getAuthToken()
                         );
                         startActivity(intent);
-
-                        startActivity(intent);
-
-                        Intent intent2 = new Intent(getApplicationContext(), MotherInfo.class);
-                        intent2.putExtra(
-                                MotherInfo.EXTRA_LOGIN_TOKEN,
-                                response.body().getAuthToken()
-
-
-                        );
-                        startActivity(intent2);
-
-                        Intent intent3 = new Intent(getApplicationContext(), SettingsPage.class);
-                        intent3.putExtra(
-                                SettingsPage.EXTRA_LOGIN_TOKEN,
-                                response.body().getAuthToken()
-                        );
-                        startActivity(intent3);
-
-                        Intent intent4 = new Intent(getApplicationContext(), Inbox.class);
-                        intent4.putExtra(
-                                Inbox.EXTRA_LOGIN_TOKEN,
-                                response.body().getAuthToken()
-
-                        );
-                        startActivity(intent4);
 
                         // TODO Share preferences, authToken
                     }
