@@ -1,9 +1,9 @@
 package org.lactor.consultant.homepage.ui;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,14 +13,15 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import org.lactor.consultant.account.ui.AccountsFragment;
-import org.lactor.consultant.displaydata.ui.DisplayDataFragment;
-import org.lactor.consultant.profile.fragment.ProfileFragment;
 import org.lactor.consultant.R;
-import org.lactor.consultant.inbox.ui.InboxFragment;
+import org.lactor.consultant.about.ui.AboutFragment;
+import org.lactor.consultant.accounts.ui.AccountsFragment;
 import org.lactor.consultant.dashboard.ui.DashboardFragment;
+import org.lactor.consultant.displaydata.ui.DisplayDataFragment;
+import org.lactor.consultant.inbox.ui.InboxFragment;
 import org.lactor.consultant.notifications.ui.NotificationsFragment;
 import org.lactor.consultant.preferences.ui.PreferencesFragment;
+import org.lactor.consultant.profile.fragment.ProfileFragment;
 
 import java.util.ArrayList;
 
@@ -33,6 +34,7 @@ public class MainActivity
                    AccountsFragment.OnFragmentInteractionListener,
                    DisplayDataFragment.OnFragmentInteractionListener,
                    ProfileFragment.OnFragmentInteractionListener,
+                   AboutFragment.OnFragmentInteractionListener,
         View.OnClickListener {
 
     public static final String EXTRA_LOGIN_TOKEN = "LoginToken";
@@ -51,10 +53,11 @@ public class MainActivity
         setContentView(R.layout.activity_main);
 
         mNavItems.add(new NavItem("Dashboard", "See Mother's Information", R.drawable.ic_action_dashboard));
-        mNavItems.add(new NavItem("Notifications", "Notification Query Values", R.drawable.ic_action_settings));
-        mNavItems.add(new NavItem("Display Data", "Diary Query Values", R.drawable.ic_action_about));
-        mNavItems.add(new NavItem("Inbox", "Unread Messages", R.drawable.ic_action_about));
-        mNavItems.add(new NavItem("Accounts", "Manage Users", R.drawable.ic_action_about));
+        mNavItems.add(new NavItem("Notifications", "Notification Query Values", R.drawable.ic_action_notifications));
+        mNavItems.add(new NavItem("Display Data", "Diary Query Values", R.drawable.ic_action_display_data));
+        mNavItems.add(new NavItem("Inbox", "Unread Messages", R.drawable.ic_action_inbox));
+        mNavItems.add(new NavItem("Accounts", "Manage Users", R.drawable.ic_action_accounts));
+        mNavItems.add(new NavItem("About", "", R.drawable.ic_action_about));
 
 
         // DrawerLayout
@@ -114,9 +117,12 @@ public class MainActivity
             case 4:
                 fragment = new AccountsFragment();
                 break;
+            case 5:
+                fragment = new AboutFragment();
+                break;
         }
 
-        FragmentManager fragmentManager = getFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.mainContent, fragment)
                 .commit();
@@ -156,7 +162,7 @@ public class MainActivity
         switch (view.getId()) {
             case R.id.profileBox:
                 Fragment fragment = new ProfileFragment();
-                FragmentManager fragmentManager = getFragmentManager();
+                FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction()
                         .replace(R.id.mainContent, fragment)
                         .commit();

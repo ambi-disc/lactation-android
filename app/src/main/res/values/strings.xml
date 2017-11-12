@@ -16,7 +16,7 @@
         <item>Patient</item>
         <item>Test User</item>
     </string-array>
-    
+
     <string-array name="action">
         <item>Request consent form agreement</item>
         <item>Request Graceland University consent form agreement</item>
