@@ -44,4 +44,6 @@
     <string name="drawer_open">Drawer Open</string>
     <string name="drawer_close">Drawer Close</string>
     <string name="welcome_to_the_lactation_consultant_portal">Welcome to the Lactation Consultant Portal</string>
+    <string name="created_at_purdue_university">Created at Purdue University.</string>
+    <string name="app_design_by_icon8">App Design by <a href="https://icons8.com/">Icon8</a></string>
 </resources>
