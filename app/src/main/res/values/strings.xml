@@ -41,7 +41,7 @@
         <item>Mother1</item>
         <item>Mother2</item>
     </string-array>
-    
+
     <string-array name="age">
         <item> less than 20</item>
         <item> 20-29</item>
@@ -81,21 +81,21 @@
         <item>$50,000 or more</item>
 
     </string-array>
-    
+
     <string-array name="occupation">
         <item>Homemaker</item>
         <item>Professional</item>
         <item>Cashier, Secretary, Laborer, Technician</item>
         <item>Other</item>
     </string-array>
-    
+
     <string-array name="residence">
         <item>Rural</item>
         <item>Urban</item>
         <item>Apartment/Rental</item>
         <item>Owned</item>
     </string-array>
-    
+
     <string-array name="ThisBabyIsYour">
         <item>First</item>
         <item>Second</item>
@@ -103,14 +103,14 @@
         <item>Fourth/more</item>
 
     </string-array>
-    
+
     <string-array name="MethodOfDelivery">
         <item>Vagina</item>
         <item>Vaginal with Assistance</item>
         <item>Breech</item>
         <item>Section</item>
     </string-array>
-    
+
     <string-array name="PastBreastfeedingExperience">
         <item> less than 3 months</item>
         <item> 3-6 months</item>
@@ -118,8 +118,6 @@
         <item> less than a year</item>
         <item> No past breastfeeding experience</item>
     </string-array>
-
-
 
 
     <string name="action_prompt">Action</string>
