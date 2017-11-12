@@ -15,31 +15,65 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Manage Users"
+            android:gravity="center"
+            android:padding="10dp"
             android:textSize="24sp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Action"
+            android:padding="10dp"
+            android:gravity="center"
             android:textSize="14sp"/>
 
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/action"
+            android:padding="10dp"
             android:textSize="14sp"/>
+
+        <Button
+            android:id="@+id/button_id2"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Set" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Add Users"
+            android:gravity="center"
+            android:padding="10dp"
             android:textSize="24sp"/>
 
         <Spinner
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:entries="@array/action"
+            android:entries="@array/addUser"
+            android:padding="10dp"
             android:textSize="14sp"/>
+
+        <EditText
+            android:id="@+id/simpleEditText"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Name"/>
+
+        <EditText
+            android:id="@+id/simpleEditText2"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Email"/>
+
+        <Button
+            android:id="@+id/button_id3"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Add User" />
+
+
     </LinearLayout>
 
     <!--

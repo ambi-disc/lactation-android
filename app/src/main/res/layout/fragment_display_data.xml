@@ -93,13 +93,14 @@
                     android:ems="10"/>
 
                 <EditText
+                    android:id="@+id/textViewFrom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="   From:"
                     android:layout_gravity="start"
                     android:ems="10"
                     android:textSize="15dp"
-                    android:id="@+id/textViewFrom" />
+                     />
 
                 <EditText
                     android:id="@+id/textViewTo"
