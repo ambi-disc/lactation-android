@@ -5,6 +5,7 @@
     tools:context="org.lactor.consultant.ViewEditMotherInfromation">
 
     <!-- TODO: Update blank fragment layout -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -118,11 +119,18 @@
             android:padding="10dp"
             android:textSize="24sp"/>
 
+        <!--
         <CheckBox
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Low Maternal Weight <50kg"
             android:id="@+id/checkBoxV1" />
+            -->
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Low Maternal Weight less than 50kg"
+            android:id="@+id/checkBoxV1"/>
 
         <CheckBox
             android:layout_width="wrap_content"
@@ -183,7 +191,20 @@
 
     </LinearLayout>
 
-    <!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
