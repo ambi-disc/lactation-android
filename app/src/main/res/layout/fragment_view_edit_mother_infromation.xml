@@ -1,0 +1,262 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.lactor.consultant.ViewEditMotherInfromation">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/motherInfo"
+            android:padding="10dp"
+            android:textSize="14sp"/>
+
+        <Button
+            android:id="@+id/button_id3"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Get Mother's Info"
+             />
+
+        <EditText
+            android:id="@+id/simpleEditTextName"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Name"
+            android:padding="10dp"
+            android:textSize="14sp"/>
+
+        <EditText
+            android:id="@+id/simpleEditTextAddress"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Address"
+            android:padding="10dp"
+            android:textSize="14sp"/>
+        <EditText
+            android:id="@+id/simpleEditTextPhone"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Phone"
+            android:padding="10dp"
+            android:textSize="14sp"/>
+        <Spinner
+            android:id="@+id/age"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/age"
+            android:padding="10dp"
+            android:textSize="14sp"
+            />
+        <Spinner
+            android:id="@+id/ethnicity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/ethnicity"
+            android:padding="10dp"
+            android:textSize="14sp"
+            />
+        <Spinner
+            android:id="@+id/race"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/race"
+            android:padding="10dp"
+            android:textSize="14sp"
+            />
+        <Spinner
+            android:id="@+id/educationLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/educationalLevel"
+            android:padding="10dp"
+            android:textSize="14sp"
+            />
+        <Spinner
+            android:id="@+id/householdIncome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/householdIncome"
+            android:padding="10dp"
+            android:textSize="14sp"
+            />
+        <Spinner
+            android:id="@+id/occupation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/occupation"
+            android:padding="10dp"
+            android:textSize="14sp"
+            />
+        <Spinner
+            android:id="@+id/residence"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/occupation"
+            android:padding="10dp"
+            android:textSize="14sp"
+            />
+        <Spinner
+            android:id="@+id/ThisBabyIsYour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/occupation"
+            android:padding="10dp"
+            android:textSize="14sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Maternal History"
+            android:padding="10dp"
+            android:textSize="24sp"/>
+
+        <!--
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Low Maternal Weight <50kg"
+            android:id="@+id/checkBoxV1" />
+            -->
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Low Maternal Weight less than 50kg"
+            android:id="@+id/checkBoxV1"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bleeding during pregnancy"
+            android:id="@+id/checkBoxV2" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Toxemia of Pregnancy"
+            android:id="@+id/checkBoxV3" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lack or late prenatal care"
+            android:id="@+id/checkBoxV4" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PROM"
+            android:id="@+id/checkBoxV5" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gestational Diabetes"
+            android:id="@+id/checkBoxV6" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other"
+            android:id="@+id/checkBoxV7" />
+
+        <Spinner
+            android:id="@+id/MethodOfDelivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/MethodOfDelivery"
+            android:padding="10dp"
+            android:textSize="14sp"
+            />
+
+        <Spinner
+            android:id="@+id/PastBreastfeedingExperience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/PastBreastfeedingExperience"
+            android:padding="10dp"
+            android:textSize="14sp"
+            />
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#009688"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Accounts"
+            android:textColor="#fff"
+            android:textSize="34sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Manage Users"
+            android:textSize="24sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Action"
+            android:textSize="14sp"/>
+    -->
+    <!--
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/action"
+            android:textSize="14sp"/>
+
+            -->
+
+    <!--
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Users"
+            android:textSize="24sp"
+            android:padding="250dp"
+            android:layout_gravity="left"/>
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/action"
+            android:textSize="14sp"
+            android:padding="180dp"/>
+
+-->
+</FrameLayout>
+
+

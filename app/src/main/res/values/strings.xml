@@ -31,6 +31,96 @@
         <item>Enable User</item>
         <item>Delete User</item>
     </string-array>
+
+    <string-array name="addUser">
+        <item>Mother</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="motherInfo">
+        <item>Mother1</item>
+        <item>Mother2</item>
+    </string-array>
+    
+    <string-array name="age">
+        <item> less than 20</item>
+        <item> 20-29</item>
+        <item> 30-39</item>
+    </string-array>
+
+    <string-array name="ethnicity">
+        <item>Hispanic or Latino</item>
+        <item>NON Hispanic or Latino</item>
+    </string-array>
+
+    <string-array name="race">
+        <item>Native Hawaiian or Pacific Islander</item>
+        <item>Asian</item>
+        <item>Black or African American</item>
+        <item>American Indian/Alaskan Native</item>
+        <item>White</item>
+        <item>More than one Race</item>
+    </string-array>
+
+    <string-array name="educationalLevel">
+        <item>Less than Highschool</item>
+        <item>High School/GED</item>
+        <item>Some College</item>
+        <item>Associate College</item>
+        <item>BA or BS degree</item>
+        <item>Masters Degree</item>
+        <item>Doctoral Degree</item>
+        <item>Professional Degree</item>
+    </string-array>
+
+    <string-array name="householdIncome">
+        <item>Less than $10,000</item>
+        <item>$10,000 to less than $24,999</item>
+        <item>$25,000 to $49,999</item>
+        <item>$50,000 or more</item>
+
+    </string-array>
+    
+    <string-array name="occupation">
+        <item>Homemaker</item>
+        <item>Professional</item>
+        <item>Cashier, Secretary, Laborer, Technician</item>
+        <item>Other</item>
+    </string-array>
+    
+    <string-array name="residence">
+        <item>Rural</item>
+        <item>Urban</item>
+        <item>Apartment/Rental</item>
+        <item>Owned</item>
+    </string-array>
+    
+    <string-array name="ThisBabyIsYour">
+        <item>First</item>
+        <item>Second</item>
+        <item>Third</item>
+        <item>Fourth/more</item>
+
+    </string-array>
+    
+    <string-array name="MethodOfDelivery">
+        <item>Vagina</item>
+        <item>Vaginal with Assistance</item>
+        <item>Breech</item>
+        <item>Section</item>
+    </string-array>
+    
+    <string-array name="PastBreastfeedingExperience">
+        <item> less than 3 months</item>
+        <item> 3-6 months</item>
+        <item> 7-12 months</item>
+        <item> less than a year</item>
+        <item> No past breastfeeding experience</item>
+    </string-array>
+
+
+
+
     <string name="action_prompt">Action</string>
     <string name="close">Close</string>
     <string name="open">Open</string>
