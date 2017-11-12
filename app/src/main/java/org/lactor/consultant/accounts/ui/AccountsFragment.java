@@ -1,4 +1,4 @@
-package org.lactor.consultant.inbox.ui;
+package org.lactor.consultant.accounts.ui;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -26,7 +26,7 @@ import java.util.List;
  * Use the {@link AccountsFragment#} factory method to
  * create an instance of this fragment.
  */
-public class InboxFragment extends Fragment {
+public class AccountsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +36,7 @@ public class InboxFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_inbox,container, false);
+        View view = inflater.inflate(R.layout.fragment_accounts,container, false);
         // Setting ViewPager for each Tabs
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewpager);
         setupViewPager(viewPager);
@@ -53,9 +53,10 @@ public class InboxFragment extends Fragment {
     // Add Fragments to Tabs
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getChildFragmentManager());
-        adapter.addFragment(new NotificationsFragment(), "Recieved");
-        adapter.addFragment(new NotificationsFragment(), "Sent");
-        adapter.addFragment(new NotificationsFragment(), "Archived");
+        adapter.addFragment(new NotificationsFragment(), "Add / Manage Users");
+        adapter.addFragment(new NotificationsFragment(), "View / Edit Mother Info");
+        adapter.addFragment(new NotificationsFragment(), "View / Edit Child Info");
+        adapter.addFragment(new NotificationsFragment(), "Questionnaires");
         viewPager.setAdapter(adapter);
     }
 

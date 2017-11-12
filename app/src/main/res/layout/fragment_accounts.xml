@@ -1,132 +1,38 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="org.lactor.consultant.account.ui.AccountsFragment">
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             tools:context="org.lactor.consultant.accounts.ui.AccountsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
-    <LinearLayout
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/main_content"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Manage Users"
-            android:gravity="center"
-            android:padding="10dp"
-            android:textSize="24sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Action"
-            android:padding="10dp"
-            android:gravity="center"
-            android:textSize="14sp"/>
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/action"
-            android:padding="10dp"
-            android:textSize="14sp"/>
-
-        <Button
-            android:id="@+id/button_id2"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="Set" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Users"
-            android:gravity="center"
-            android:padding="10dp"
-            android:textSize="24sp"/>
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/addUser"
-            android:padding="10dp"
-            android:textSize="14sp"/>
-
-        <EditText
-            android:id="@+id/simpleEditText"
-            android:layout_height="wrap_content"
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
             android:layout_width="match_parent"
-            android:text="Name"/>
-
-        <EditText
-            android:id="@+id/simpleEditText2"
             android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/result_tabs"
+                android:background="@color/grey"
+                app:tabTextColor="@color/medium_grey"
+                app:tabSelectedTextColor="@color/colorPrimary"
+                app:tabIndicatorColor="@color/colorPrimary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabMode="scrollable"/>
+        </android.support.design.widget.AppBarLayout>
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:text="Email"/>
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-        <Button
-            android:id="@+id/button_id3"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="Add User" />
+    </android.support.design.widget.CoordinatorLayout>
 
-
-    </LinearLayout>
-
-    <!--
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="#009688"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Accounts"
-            android:textColor="#fff"
-            android:textSize="34sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Manage Users"
-            android:textSize="24sp"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Action"
-            android:textSize="14sp"/>
-    -->
-    <!--
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/action"
-            android:textSize="14sp"/>
-
-            -->
-
-    <!--
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Users"
-            android:textSize="24sp"
-            android:padding="250dp"
-            android:layout_gravity="left"/>
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/action"
-            android:textSize="14sp"
-            android:padding="180dp"/>
-
--->
 </FrameLayout>
