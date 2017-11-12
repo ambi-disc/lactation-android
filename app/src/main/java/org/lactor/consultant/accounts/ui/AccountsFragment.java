@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.lactor.consultant.R;
-import org.lactor.consultant.notifications.ui.NotificationsFragment;
+import org.lactor.consultant.ViewEditMotherInfromation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,10 +53,10 @@ public class AccountsFragment extends Fragment {
     // Add Fragments to Tabs
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getChildFragmentManager());
-        adapter.addFragment(new NotificationsFragment(), "Add / Manage Users");
-        adapter.addFragment(new NotificationsFragment(), "View / Edit Mother Info");
-        adapter.addFragment(new NotificationsFragment(), "View / Edit Child Info");
-        adapter.addFragment(new NotificationsFragment(), "Questionnaires");
+        adapter.addFragment(new ViewEditMotherInfromation(), "Add / Manage Users");
+        adapter.addFragment(new ViewEditMotherInfromation(), "View / Edit Mother Info");
+        adapter.addFragment(new ViewEditMotherInfromation(), "View / Edit Child Info");
+        adapter.addFragment(new ViewEditMotherInfromation(), "Questionnaires");
         viewPager.setAdapter(adapter);
     }
 

@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.RelativeLayout;
 
 import org.lactor.consultant.R;
+import org.lactor.consultant.ViewEditMotherInfromation;
 import org.lactor.consultant.about.ui.AboutFragment;
 import org.lactor.consultant.accounts.ui.AccountsFragment;
 import org.lactor.consultant.dashboard.ui.DashboardFragment;
@@ -35,7 +36,9 @@ public class MainActivity
                    DisplayDataFragment.OnFragmentInteractionListener,
                    ProfileFragment.OnFragmentInteractionListener,
                    AboutFragment.OnFragmentInteractionListener,
-        View.OnClickListener {
+                   ViewEditMotherInfromation.OnFragmentInteractionListener,
+
+                   View.OnClickListener {
 
     public static final String EXTRA_LOGIN_TOKEN = "LoginToken";
 

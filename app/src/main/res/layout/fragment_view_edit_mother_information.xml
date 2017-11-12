@@ -6,257 +6,309 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/motherInfo"
-            android:padding="10dp"
-            android:textSize="14sp"/>
-
-        <Button
-            android:id="@+id/button_id3"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:text="Get Mother's Info"
-             />
-
-        <EditText
-            android:id="@+id/simpleEditTextName"
-            android:layout_height="wrap_content"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:text="Name"
-            android:padding="10dp"
-            android:textSize="14sp"/>
-
-        <EditText
-            android:id="@+id/simpleEditTextAddress"
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="Address"
-            android:padding="10dp"
-            android:textSize="14sp"/>
-        <EditText
-            android:id="@+id/simpleEditTextPhone"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:text="Phone"
-            android:padding="10dp"
-            android:textSize="14sp"/>
-        <Spinner
-            android:id="@+id/age"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/age"
-            android:padding="10dp"
-            android:textSize="14sp"
-            />
-        <Spinner
-            android:id="@+id/ethnicity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/ethnicity"
-            android:padding="10dp"
-            android:textSize="14sp"
-            />
-        <Spinner
-            android:id="@+id/race"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/race"
-            android:padding="10dp"
-            android:textSize="14sp"
-            />
-        <Spinner
-            android:id="@+id/educationLevel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/educationalLevel"
-            android:padding="10dp"
-            android:textSize="14sp"
-            />
-        <Spinner
-            android:id="@+id/householdIncome"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/householdIncome"
-            android:padding="10dp"
-            android:textSize="14sp"
-            />
-        <Spinner
-            android:id="@+id/occupation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/occupation"
-            android:padding="10dp"
-            android:textSize="14sp"
-            />
-        <Spinner
-            android:id="@+id/residence"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/occupation"
-            android:padding="10dp"
-            android:textSize="14sp"
-            />
-        <Spinner
-            android:id="@+id/ThisBabyIsYour"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/occupation"
-            android:padding="10dp"
-            android:textSize="14sp"
-            />
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Maternal History"
-            android:padding="10dp"
-            android:textSize="24sp"/>
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/motherInfo"
+                android:padding="10dp"
+                android:textSize="14sp"/>
 
-        <!--
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Low Maternal Weight <50kg"
-            android:id="@+id/checkBoxV1" />
-            -->
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Low Maternal Weight less than 50kg"
-            android:id="@+id/checkBoxV1"/>
+            <Button
+                android:id="@+id/button_id3"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Get Mother's Info"
+                />
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Bleeding during pregnancy"
-            android:id="@+id/checkBoxV2" />
+            <EditText
+                android:id="@+id/simpleEditTextName"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Name"
+                android:padding="10dp"
+                android:textSize="14sp"/>
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Toxemia of Pregnancy"
-            android:id="@+id/checkBoxV3" />
+            <EditText
+                android:id="@+id/simpleEditTextAddress"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Address"
+                android:padding="10dp"
+                android:textSize="14sp"/>
+            <EditText
+                android:id="@+id/simpleEditTextPhone"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:text="Phone"
+                android:padding="10dp"
+                android:textSize="14sp"/>
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lack or late prenatal care"
-            android:id="@+id/checkBoxV4" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="PROM"
-            android:id="@+id/checkBoxV5" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/age"/>
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gestational Diabetes"
-            android:id="@+id/checkBoxV6" />
+                <Spinner
+                    android:id="@+id/age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/age"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    />
 
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Other"
-            android:id="@+id/checkBoxV7" />
+            </LinearLayout>
 
-        <Spinner
-            android:id="@+id/MethodOfDelivery"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/MethodOfDelivery"
-            android:padding="10dp"
-            android:textSize="14sp"
-            />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <Spinner
-            android:id="@+id/PastBreastfeedingExperience"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/PastBreastfeedingExperience"
-            android:padding="10dp"
-            android:textSize="14sp"
-            />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ethnicity"/>
 
+                <Spinner
+                    android:id="@+id/ethnicity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/ethnicity"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    />
 
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/race"/>
 
+                <Spinner
+                    android:id="@+id/race"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/race"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    />
 
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/education_level"/>
 
+                <Spinner
+                    android:id="@+id/educationLevel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/educationalLevel"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    />
 
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/household_income"/>
 
+                <Spinner
+                    android:id="@+id/householdIncome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/householdIncome"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    />
 
+            </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/occupation"/>
 
+                <Spinner
+                    android:id="@+id/occupation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/occupation"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    />
 
-<!--
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="#009688"/>
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Accounts"
-            android:textColor="#fff"
-            android:textSize="34sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Manage Users"
-            android:textSize="24sp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/residence"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Action"
-            android:textSize="14sp"/>
-    -->
-    <!--
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/action"
-            android:textSize="14sp"/>
+                <Spinner
+                    android:id="@+id/residence"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/residence"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    />
 
-            -->
+            </LinearLayout>
 
-    <!--
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Add Users"
-            android:textSize="24sp"
-            android:padding="250dp"
-            android:layout_gravity="left"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/this_baby_is_your"/>
 
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:entries="@array/action"
-            android:textSize="14sp"
-            android:padding="180dp"/>
+                <Spinner
+                    android:id="@+id/ThisBabyIsYour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/ThisBabyIsYour"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    />
 
--->
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Maternal History"
+                android:padding="10dp"
+                android:textSize="24sp"/>
+
+            <!--
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Low Maternal Weight <50kg"
+                android:id="@+id/checkBoxV1" />
+                -->
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Low Maternal Weight less than 50kg"
+                android:id="@+id/checkBoxV1"/>
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bleeding during pregnancy"
+                android:id="@+id/checkBoxV2" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Toxemia of Pregnancy"
+                android:id="@+id/checkBoxV3" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lack or late prenatal care"
+                android:id="@+id/checkBoxV4" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PROM"
+                android:id="@+id/checkBoxV5" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gestational Diabetes"
+                android:id="@+id/checkBoxV6" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other"
+                android:id="@+id/checkBoxV7" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/method_of_delivery"/>
+
+                <Spinner
+                    android:id="@+id/MethodOfDelivery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/MethodOfDelivery"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/past_breastfeeding_experience"/>
+
+                <Spinner
+                    android:id="@+id/PastBreastfeedingExperience"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/PastBreastfeedingExperience"
+                    android:padding="10dp"
+                    android:textSize="14sp"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </FrameLayout>
 
 
