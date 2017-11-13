@@ -11,6 +11,7 @@
     <string name="submit">Submit</string>
     <string name="acct_reg">Account Registration</string>
     <string-array name="organization">
+        <item>Choose one</item>
         <item>Organization</item>
         <item>Hospital Administrator</item>
         <item>Patient</item>
@@ -18,6 +19,7 @@
     </string-array>
 
     <string-array name="action">
+        <item>Choose one</item>
         <item>Request consent form agreement</item>
         <item>Request Graceland University consent form agreement</item>
         <item>Request system feedback</item>
@@ -33,16 +35,19 @@
     </string-array>
 
     <string-array name="addUser">
+        <item>Choose one</item>
         <item>Mother</item>
         <item>Other</item>
     </string-array>
 
     <string-array name="motherInfo">
+        <item>Choose one</item>
         <item>Mother1</item>
         <item>Mother2</item>
     </string-array>
 
     <string-array name="age">
+        <item>Choose one</item>
         <item> less than 20</item>
         <item> 20-29</item>
         <item> 30-39</item>
@@ -50,11 +55,13 @@
     </string-array>
 
     <string-array name="ethnicity">
+        <item>Choose one</item>
         <item>Hispanic or Latino</item>
         <item>NON Hispanic or Latino</item>
     </string-array>
 
     <string-array name="race">
+        <item>Choose one</item>
         <item>Native Hawaiian or Pacific Islander</item>
         <item>Asian</item>
         <item>Black or African American</item>
@@ -64,6 +71,7 @@
     </string-array>
 
     <string-array name="educationalLevel">
+        <item>Choose one</item>
         <item>Less than Highschool</item>
         <item>High School/GED</item>
         <item>Some College</item>
@@ -75,6 +83,7 @@
     </string-array>
 
     <string-array name="householdIncome">
+        <item>Choose one</item>
         <item>Less than $10,000</item>
         <item>$10,000 to less than $24,999</item>
         <item>$25,000 to $49,999</item>
@@ -83,6 +92,7 @@
     </string-array>
 
     <string-array name="occupation">
+        <item>Choose one</item>
         <item>Homemaker</item>
         <item>Professional</item>
         <item>Cashier, Secretary, Laborer, Technician</item>
@@ -90,6 +100,7 @@
     </string-array>
 
     <string-array name="residence">
+        <item>Choose one</item>
         <item>Rural</item>
         <item>Urban</item>
         <item>Apartment/Rental</item>
@@ -97,6 +108,7 @@
     </string-array>
 
     <string-array name="ThisBabyIsYour">
+        <item>Choose one</item>
         <item>First</item>
         <item>Second</item>
         <item>Third</item>
@@ -105,6 +117,7 @@
     </string-array>
 
     <string-array name="MethodOfDelivery">
+        <item>Choose one</item>
         <item>Vagina</item>
         <item>Vaginal with Assistance</item>
         <item>Breech</item>
@@ -112,11 +125,136 @@
     </string-array>
 
     <string-array name="PastBreastfeedingExperience">
+        <item>Choose one</item>
         <item> less than 3 months</item>
         <item> 3-6 months</item>
         <item> 7-12 months</item>
         <item> less than a year</item>
         <item> No past breastfeeding experience</item>
+    </string-array>
+
+    <string-array name="GestationalAge">
+        <item>Choose one</item>
+        <item>less than 34 weeks</item>
+        <item>34 to 35 weeks</item>
+        <item>35 to 36 weeks</item>
+        <item>36 to 37 weeks</item>
+        <item>Greater than 37 weeks</item>
+    </string-array>
+
+    <string-array name="AppropriatenessForAge">
+        <item>Choose one</item>
+        <item>AGA</item>
+        <item>SGA</item>
+        <item>LGA</item>
+    </string-array>
+
+    <string-array name="InfantWeight1">
+        <item>Choose one</item>
+        <item>less than 2 pounds</item>
+        <item>2 pounds</item>
+        <item>3 pounds</item>
+        <item>4 pounds</item>
+        <item>5 pounds</item>
+        <item>6 pounds</item>
+        <item>7 pounds</item>
+        <item>8 pounds</item>
+        <item>9 pounds</item>
+        <item>10 pounds</item>
+        <item>greater than 10 pounds</item>
+    </string-array>
+
+    <string-array name="InfantWeight2">
+        <item>Choose one</item>
+        <item>1 ounces</item>
+        <item>2 ounces</item>
+        <item>3 ounces</item>
+        <item>4 ounces</item>
+        <item>5 ounces</item>
+        <item>6 ounces</item>
+        <item>7 ounces</item>
+        <item>8 ounces</item>
+        <item>9 ounces</item>
+        <item>10 ounces</item>
+        <item>11 ounces</item>
+        <item>12 ounces</item>
+        <item>13 ounces</item>
+        <item>14 ounces</item>
+        <item>15 ounces</item>
+        <item>16 ounces</item>
+    </string-array>
+
+    <string-array name="firstfeeding">
+        <item>Choose one</item>
+        <item>Mother's own milk</item>
+        <item>Breast milk (banked)</item>
+        <item>Formula</item>
+    </string-array>
+
+    <string-array name="agefeeding">
+        <item>Choose one</item>
+        <item>Immediately after birth</item>
+        <item>2-4 hours after birth</item>
+        <item>6 hours after birth</item>
+        <item>Greater than 6 hours after birth</item>
+    </string-array>
+
+    <string-array name="timeOffeeding">
+        <item>Choose one</item>
+        <item>Within 1 hour after delivery</item>
+        <item>Within first 6 hours after delivery</item>
+        <item>6-12 hours after delivery</item>
+        <item>After the first day</item>
+
+    </string-array>
+
+    <string-array name="frequencybreast">
+        <item>Choose one</item>
+        <item>Every 2-3 hours</item>
+        <item>Every 4-5 hours</item>
+        <item>Greater than 5 hours</item>
+    </string-array>
+
+    <string-array name="firstcareprovider">
+        <item>Choose one</item>
+        <item>Within 48-72 hours</item>
+        <item>By the first week of discharge</item>
+        <item>After the first week of discharge</item>
+    </string-array>
+
+    <string-array name="needforprovider">
+        <item>Choose one</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="timeOfExtraCare">
+        <item>Choose one</item>
+        <item>1-2 times</item>
+        <item>3-4 items</item>
+        <item>5-6 times</item>
+    </string-array>
+    
+    <string-array name="questionnaire">
+        <item>Choose one</item>
+        <item>System Feedback</item>
+        <item>Breastfeeding Followup</item>
+        <item>Self Efficacy Survey</item>
+        <item>Breastfeeding Evaluation</item>
+        <item>Postnatal Depression</item>
+    </string-array>
+    
+    <string-array name="notificationsquery">
+        <item>All</item>
+        <item>Latching</item>
+        <item>Jaundice</item>
+        <item>Engorgement</item>
+        <item>Sore Nipple</item>
+        <item>Insufficient Breastfeeding Entries</item>
+        <item>Nipple Shield</item>
+        <item>Sufficient Breastfeeding Entries</item>
+        <item>Sufficient Output Entries</item>
+        <item>Sufficient Notification Reading</item>
     </string-array>
 
 
@@ -145,4 +283,6 @@
     <string name="this_baby_is_your">This Baby Is Your:</string>
     <string name="method_of_delivery">Method of Delivery:</string>
     <string name="past_breastfeeding_experience">Past Breastfeeding Experience:</string>
+
+    <string name="longtext">LACTOR is an innovative, interactive web-based breastfeeding monitoring system. LACTOR was created to help breastfeeding mothers monitor their breastfeeding patterns and detect early breastfeeding problems. The lactation consultant can also monitor mothers data and intervene immediately in case of a breastfeeding problem. Mothers also receive notifications if they have any breastfeeding problem with suggestions to help solve the problem</string>
 </resources>

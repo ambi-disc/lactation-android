@@ -96,7 +96,7 @@
                     android:id="@+id/textViewFrom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="   From:"
+                    android:text="From:"
                     android:layout_gravity="start"
                     android:ems="10"
                     android:textSize="15dp"
@@ -108,12 +108,48 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:ems="10"
-                    android:text="   To:"
+                    android:text="To:"
                     android:textSize="15dp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="15dp"
+                        android:text="Mother"/>
+
+                    <Spinner
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/motherInfo"
+                        android:padding="10dp"
+                        android:textSize="14sp"/>
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:text="Search"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:text="Download"/>
 
     </LinearLayout>
 
