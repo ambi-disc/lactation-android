@@ -11,9 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.lactor.consultant.ManageUsers;
 import org.lactor.consultant.R;
-import org.lactor.consultant.ViewEditMotherInfromation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,10 +52,10 @@ public class AccountsFragment extends Fragment {
     // Add Fragments to Tabs
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getChildFragmentManager());
-        adapter.addFragment(new ManageUsers(), "Add / Manage Users");
-        adapter.addFragment(new ViewEditMotherInfromation(), "View / Edit Mother Info");
-        adapter.addFragment(new ViewEditMotherInfromation(), "View / Edit Child Info");
-        adapter.addFragment(new ViewEditMotherInfromation(), "Questionnaires");
+        adapter.addFragment(new ManageUsersFragment(), "Add / Manage Users");
+        adapter.addFragment(new ViewEditMotherInfromationFragment(), "View / Edit Mother Info");
+        adapter.addFragment(new ViewEditMotherInfromationFragment(), "View / Edit Child Info");
+        adapter.addFragment(new ViewEditMotherInfromationFragment(), "QuestionnairesFragment");
         viewPager.setAdapter(adapter);
     }
 

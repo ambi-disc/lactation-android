@@ -1,4 +1,4 @@
-package org.lactor.consultant;
+package org.lactor.consultant.accounts.ui;
 
 import android.content.Context;
 import android.net.Uri;
@@ -8,16 +8,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import org.lactor.consultant.R;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ManageUsers.OnFragmentInteractionListener} interface
+ * {@link QuestionnairesFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link ManageUsers#newInstance} factory method to
+ * Use the {@link QuestionnairesFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ManageUsers extends Fragment {
+public class QuestionnairesFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,7 +30,7 @@ public class ManageUsers extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public ManageUsers() {
+    public QuestionnairesFragment() {
         // Required empty public constructor
     }
 
@@ -39,11 +40,11 @@ public class ManageUsers extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ManageUsers.
+     * @return A new instance of fragment QuestionnairesFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ManageUsers newInstance(String param1, String param2) {
-        ManageUsers fragment = new ManageUsers();
+    public static QuestionnairesFragment newInstance(String param1, String param2) {
+        QuestionnairesFragment fragment = new QuestionnairesFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,7 +65,7 @@ public class ManageUsers extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_manage_users, container, false);
+        return inflater.inflate(R.layout.fragment_questionnaires, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
