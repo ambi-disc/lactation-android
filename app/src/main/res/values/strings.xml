@@ -151,7 +151,7 @@
 
     <string-array name="InfantWeight1">
         <item>Choose one</item>
-        <item>less than 2 pounds</item>
+        <item>&lt; 2 pounds</item>
         <item>2 pounds</item>
         <item>3 pounds</item>
         <item>4 pounds</item>
@@ -161,7 +161,7 @@
         <item>8 pounds</item>
         <item>9 pounds</item>
         <item>10 pounds</item>
-        <item>greater than 10 pounds</item>
+        <item>&gt; 10 pounds</item>
     </string-array>
 
     <string-array name="InfantWeight2">
@@ -285,4 +285,6 @@
     <string name="past_breastfeeding_experience">Past Breastfeeding Experience:</string>
 
     <string name="longtext">LACTOR is an innovative, interactive web-based breastfeeding monitoring system. LACTOR was created to help breastfeeding mothers monitor their breastfeeding patterns and detect early breastfeeding problems. The lactation consultant can also monitor mothers data and intervene immediately in case of a breastfeeding problem. Mothers also receive notifications if they have any breastfeeding problem with suggestions to help solve the problem</string>
+    <string name="mother">Mother</string>
+    <string name="questionnaire">Questionnaire</string>
 </resources>

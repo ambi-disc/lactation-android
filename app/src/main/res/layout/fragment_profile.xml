@@ -1,7 +1,8 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
     tools:context="org.lactor.consultant.profile.fragment.ProfileFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -26,7 +27,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -47,7 +48,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -67,7 +68,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -87,7 +88,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -108,7 +109,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -123,9 +124,5 @@
                 android:textSize="24sp"
                 android:text="Hi, I am ..."
                 />
-
         </LinearLayout>
-
-
-
-</FrameLayout>
+</LinearLayout>

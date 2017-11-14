@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 
 import org.lactor.consultant.ManageUsers;
 import org.lactor.consultant.R;
+import org.lactor.consultant.ViewEditChildInformation;
 import org.lactor.consultant.ViewEditMotherInfromation;
 
 import java.util.ArrayList;
@@ -56,8 +57,8 @@ public class AccountsFragment extends Fragment {
         Adapter adapter = new Adapter(getChildFragmentManager());
         adapter.addFragment(new ManageUsers(), "Add / Manage Users");
         adapter.addFragment(new ViewEditMotherInfromation(), "View / Edit Mother Info");
-        adapter.addFragment(new ViewEditMotherInfromation(), "View / Edit Child Info");
-        adapter.addFragment(new ViewEditMotherInfromation(), "Questionnaires");
+        adapter.addFragment(new ViewEditChildInformation(), "View / Edit Child Info");
+        adapter.addFragment(new Questionnaires(), "Questionnaires");
         viewPager.setAdapter(adapter);
     }
 

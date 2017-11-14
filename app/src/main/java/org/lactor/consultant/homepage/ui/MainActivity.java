@@ -13,11 +13,16 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
+import org.lactor.consultant.InboxArchived;
+import org.lactor.consultant.InboxCompose;
+import org.lactor.consultant.InboxNew;
 import org.lactor.consultant.ManageUsers;
 import org.lactor.consultant.R;
+import org.lactor.consultant.ViewEditChildInformation;
 import org.lactor.consultant.ViewEditMotherInfromation;
 import org.lactor.consultant.about.ui.AboutFragment;
 import org.lactor.consultant.accounts.ui.AccountsFragment;
+import org.lactor.consultant.accounts.ui.Questionnaires;
 import org.lactor.consultant.dashboard.ui.DashboardFragment;
 import org.lactor.consultant.displaydata.ui.DisplayDataFragment;
 import org.lactor.consultant.inbox.ui.InboxFragment;
@@ -39,6 +44,11 @@ public class MainActivity
                    AboutFragment.OnFragmentInteractionListener,
                    ViewEditMotherInfromation.OnFragmentInteractionListener,
                    ManageUsers.OnFragmentInteractionListener,
+                   ViewEditChildInformation.OnFragmentInteractionListener,
+                   Questionnaires.OnFragmentInteractionListener,
+                   InboxArchived.OnFragmentInteractionListener,
+                   InboxNew.OnFragmentInteractionListener,
+                   InboxCompose.OnFragmentInteractionListener,
                    View.OnClickListener {
 
     public static final String EXTRA_LOGIN_TOKEN = "LoginToken";
