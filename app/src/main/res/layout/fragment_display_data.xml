@@ -5,114 +5,35 @@
     tools:context="org.lactor.consultant.displaydata.ui.DisplayDataFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="#009688"
-        android:weightSum="1">
-
-        <TextView
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/textView2"
-            android:text="Diary Query Values"
-            android:textColor="#fff"
-            android:textAlignment="center"
-            android:textSize="30dp"
-            android:padding="15dp"
-            />
-
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#009688"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:text="Diary Query Values"
+                android:textColor="#fff"
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:padding="15dp"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Events:"
-                    android:id="@+id/textView4"
-                    android:layout_gravity="left"
-                    android:padding="10dp"
-                    android:textSize="15dp"
-                    android:ems="10"/>
-
-                <CheckBox
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="All"
-                    android:id="@+id/checkBox" />
-
-                <CheckBox
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Breastfeeding"
-                    android:id="@+id/checkBox2" />
-
-                <CheckBox
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Supplement"
-                    android:id="@+id/checkBox3" />
-
-                <CheckBox
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Output"
-                    android:id="@+id/checkBox4" />
-
-                <CheckBox
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Health Issues"
-                    android:id="@+id/checkBox5" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Date Range Search:"
-                    android:id="@+id/textView3"
-                    android:layout_gravity="left"
-                    android:padding="10dp"
-                    android:textSize="15dp"
-                    android:ems="10"/>
-
-                <EditText
-                    android:id="@+id/textViewFrom"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="From:"
-                    android:layout_gravity="start"
-                    android:ems="10"
-                    android:textSize="15dp"
-                     />
-
-                <EditText
-                    android:id="@+id/textViewTo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="left"
-                    android:ems="10"
-                    android:text="To:"
-                    android:textSize="15dp" />
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:layout_weight="1">
@@ -120,37 +41,121 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:padding="15dp"
-                        android:text="Mother"/>
+                        android:text="Events:"
+                        android:id="@+id/textView4"
+                        android:layout_gravity="left"
+                        android:padding="10dp"
+                        android:textSize="15dp"
+                        android:ems="10"/>
 
-                    <Spinner
+                    <CheckBox
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:entries="@array/motherInfo"
+                        android:text="All"
+                        android:id="@+id/checkBox" />
+
+                    <CheckBox
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Breastfeeding"
+                        android:id="@+id/checkBox2" />
+
+                    <CheckBox
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Supplement"
+                        android:id="@+id/checkBox3" />
+
+                    <CheckBox
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Output"
+                        android:id="@+id/checkBox4" />
+
+                    <CheckBox
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Health Issues"
+                        android:id="@+id/checkBox5" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date Range Search:"
+                        android:id="@+id/textView3"
+                        android:layout_gravity="left"
                         android:padding="10dp"
-                        android:textSize="14sp"/>
+                        android:textSize="15dp"
+                        android:ems="10"/>
+
+                    <EditText
+                        android:id="@+id/textViewFrom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="From:"
+                        android:layout_gravity="start"
+                        android:ems="10"
+                        android:textSize="15dp"
+                         />
+
+                    <EditText
+                        android:id="@+id/textViewTo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:ems="10"
+                        android:text="To:"
+                        android:textSize="15dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="15dp"
+                            android:text="Mother"/>
+
+                        <Spinner
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/motherInfo"
+                            android:padding="10dp"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+
                 </LinearLayout>
 
             </LinearLayout>
 
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:text="Search"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:text="Download"/>
+
         </LinearLayout>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="14sp"
-            android:layout_gravity="center"
-            android:text="Search"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textSize="14sp"
-            android:layout_gravity="center"
-            android:text="Download"/>
-
-    </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

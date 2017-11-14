@@ -234,7 +234,7 @@
         <item>3-4 items</item>
         <item>5-6 times</item>
     </string-array>
-    
+
     <string-array name="questionnaire">
         <item>Choose one</item>
         <item>System Feedback</item>
@@ -243,7 +243,7 @@
         <item>Breastfeeding Evaluation</item>
         <item>Postnatal Depression</item>
     </string-array>
-    
+
     <string-array name="notificationsquery">
         <item>All</item>
         <item>Latching</item>
