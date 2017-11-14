@@ -10,15 +10,16 @@ import android.view.ViewGroup;
 
 import org.lactor.consultant.R;
 
+
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Questionnaires.OnFragmentInteractionListener} interface
+ * {@link ManageUsersFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Questionnaires#newInstance} factory method to
+ * Use the {@link ManageUsersFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Questionnaires extends Fragment {
+public class ManageUsersFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -30,7 +31,7 @@ public class Questionnaires extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public Questionnaires() {
+    public ManageUsersFragment() {
         // Required empty public constructor
     }
 
@@ -40,11 +41,11 @@ public class Questionnaires extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Questionnaires.
+     * @return A new instance of fragment ManageUsersFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static Questionnaires newInstance(String param1, String param2) {
-        Questionnaires fragment = new Questionnaires();
+    public static ManageUsersFragment newInstance(String param1, String param2) {
+        ManageUsersFragment fragment = new ManageUsersFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -65,7 +66,7 @@ public class Questionnaires extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_questionnaires, container, false);
+        return inflater.inflate(R.layout.fragment_manage_users, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
