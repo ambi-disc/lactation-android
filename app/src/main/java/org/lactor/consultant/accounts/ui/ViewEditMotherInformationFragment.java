@@ -14,12 +14,12 @@ import org.lactor.consultant.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link ViewEditMotherInfromationFragment.OnFragmentInteractionListener} interface
+ * {@link ViewEditMotherInformationFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link ViewEditMotherInfromationFragment#newInstance} factory method to
+ * Use the {@link ViewEditMotherInformationFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ViewEditMotherInfromationFragment extends Fragment {
+public class ViewEditMotherInformationFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -31,7 +31,7 @@ public class ViewEditMotherInfromationFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public ViewEditMotherInfromationFragment() {
+    public ViewEditMotherInformationFragment() {
         // Required empty public constructor
     }
 
@@ -41,11 +41,11 @@ public class ViewEditMotherInfromationFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ViewEditMotherInfromationFragment.
+     * @return A new instance of fragment ViewEditMotherInformationFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static ViewEditMotherInfromationFragment newInstance(String param1, String param2) {
-        ViewEditMotherInfromationFragment fragment = new ViewEditMotherInfromationFragment();
+    public static ViewEditMotherInformationFragment newInstance(String param1, String param2) {
+        ViewEditMotherInformationFragment fragment = new ViewEditMotherInformationFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);

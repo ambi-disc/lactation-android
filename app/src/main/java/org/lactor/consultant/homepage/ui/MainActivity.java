@@ -13,19 +13,19 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import org.lactor.consultant.InboxArchived;
-import org.lactor.consultant.InboxCompose;
-import org.lactor.consultant.InboxNew;
-import org.lactor.consultant.ManageUsers;
 import org.lactor.consultant.accounts.ui.ManageUsersFragment;
 import org.lactor.consultant.R;
-import org.lactor.consultant.accounts.ui.ViewEditMotherInfromationFragment;
+import org.lactor.consultant.accounts.ui.QuestionnairesFragment;
+import org.lactor.consultant.accounts.ui.ViewEditChildInformationFragment;
+import org.lactor.consultant.accounts.ui.ViewEditMotherInformationFragment;
 import org.lactor.consultant.about.ui.AboutFragment;
 import org.lactor.consultant.accounts.ui.AccountsFragment;
-import org.lactor.consultant.accounts.ui.Questionnaires;
 import org.lactor.consultant.dashboard.ui.DashboardFragment;
 import org.lactor.consultant.displaydata.ui.DisplayDataFragment;
+import org.lactor.consultant.inbox.ui.ArchivedFragment;
+import org.lactor.consultant.inbox.ui.ComposeFragment;
 import org.lactor.consultant.inbox.ui.InboxFragment;
+import org.lactor.consultant.inbox.ui.NewFragment;
 import org.lactor.consultant.notifications.ui.NotificationsFragment;
 import org.lactor.consultant.preferences.ui.PreferencesFragment;
 import org.lactor.consultant.profile.fragment.ProfileFragment;
@@ -42,13 +42,13 @@ public class MainActivity
                    DisplayDataFragment.OnFragmentInteractionListener,
                    ProfileFragment.OnFragmentInteractionListener,
                    AboutFragment.OnFragmentInteractionListener,
-                   ViewEditMotherInfromation.OnFragmentInteractionListener,
-                   ManageUsers.OnFragmentInteractionListener,
-                   ViewEditChildInformation.OnFragmentInteractionListener,
-                   Questionnaires.OnFragmentInteractionListener,
-                   InboxArchived.OnFragmentInteractionListener,
-                   InboxNew.OnFragmentInteractionListener,
-                   InboxCompose.OnFragmentInteractionListener,
+                   ViewEditMotherInformationFragment.OnFragmentInteractionListener,
+                   ManageUsersFragment.OnFragmentInteractionListener,
+                   ViewEditChildInformationFragment.OnFragmentInteractionListener,
+                   QuestionnairesFragment.OnFragmentInteractionListener,
+                   ArchivedFragment.OnFragmentInteractionListener,
+                   NewFragment.OnFragmentInteractionListener,
+                   ComposeFragment.OnFragmentInteractionListener,
                    View.OnClickListener {
 
     public static final String EXTRA_LOGIN_TOKEN = "LoginToken";

@@ -53,9 +53,9 @@ public class AccountsFragment extends Fragment {
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getChildFragmentManager());
         adapter.addFragment(new ManageUsersFragment(), "Add / Manage Users");
-        adapter.addFragment(new ViewEditMotherInfromationFragment(), "View / Edit Mother Info");
-        adapter.addFragment(new ViewEditMotherInfromationFragment(), "View / Edit Child Info");
-        adapter.addFragment(new ViewEditMotherInfromationFragment(), "QuestionnairesFragment");
+        adapter.addFragment(new ViewEditMotherInformationFragment(), "View / Edit Mother Info");
+        adapter.addFragment(new ViewEditChildInformationFragment(), "View / Edit Child Info");
+        adapter.addFragment(new QuestionnairesFragment(), "QuestionnairesFragment");
         viewPager.setAdapter(adapter);
     }
 

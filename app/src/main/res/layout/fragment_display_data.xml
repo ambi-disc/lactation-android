@@ -100,7 +100,8 @@
                         android:id="@+id/textViewFrom"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="From:"
+                        android:hint="From:"
+                        android:textColor="@color/black"
                         android:layout_gravity="start"
                         android:ems="10"
                         android:textSize="15dp"
@@ -112,7 +113,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:ems="10"
-                        android:text="To:"
+                        android:textColor="@color/black"
+                        android:hint="To:"
                         android:textSize="15dp" />
 
                     <LinearLayout
