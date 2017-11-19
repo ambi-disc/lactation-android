@@ -12,7 +12,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.lactor.consultant.R;
-import org.lactor.consultant.notifications.ui.NotificationsFragment;
+import org.lactor.consultant.inbox.ui.tabfragment.ArchivedInboxFragment;
+import org.lactor.consultant.inbox.ui.tabfragment.ReceivedInboxFragment;
+import org.lactor.consultant.inbox.ui.tabfragment.SentInboxFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,9 +55,9 @@ public class InboxFragment extends Fragment {
     // Add Fragments to Tabs
     private void setupViewPager(ViewPager viewPager) {
         Adapter adapter = new Adapter(getChildFragmentManager());
-        adapter.addFragment(new NewFragment(), "Recieved");
-        adapter.addFragment(new ComposeFragment(), "Sent");
-        adapter.addFragment(new ArchivedFragment(), "Archived");
+        adapter.addFragment(new ReceivedInboxFragment(), "Recieved");
+        adapter.addFragment(new SentInboxFragment(), "Sent");
+        adapter.addFragment(new ArchivedInboxFragment(), "Archived");
         viewPager.setAdapter(adapter);
     }
 

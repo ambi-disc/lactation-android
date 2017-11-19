@@ -20,4 +20,7 @@ public interface LactorApi {
 
     @GET("/account/verify_token")
     Call<Boolean> verifyToken(@Query("authToken") String authToken);
+
+    @GET("/mothers")
+    Call<MothersResult> getListOfMothers(@Query("authToken") String authToken);
 }
