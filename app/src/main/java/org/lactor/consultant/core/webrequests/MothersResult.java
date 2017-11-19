@@ -1,9 +1,9 @@
 package org.lactor.consultant.core.webrequests;
 
-/**
- * @Author Matthew Page
- * @Date 11/19/17
- */
+import org.lactor.consultant.core.model.Mother;
+
+import java.util.List;
 
 class MothersResult {
+    public List<Mother> mothers;
 }
