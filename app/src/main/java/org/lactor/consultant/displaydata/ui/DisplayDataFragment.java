@@ -117,7 +117,7 @@ public class DisplayDataFragment extends Fragment implements View.OnClickListene
     public void onClick(View view) {
         switch(view.getId()){
             case R.id.textViewFrom:
-                DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+                /*DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
                         if (DisplayDataFragment.filterMethodDateStart != null) {
@@ -150,7 +150,8 @@ public class DisplayDataFragment extends Fragment implements View.OnClickListene
                     int day = c.get(Calendar.DAY_OF_MONTH);
 
                     new DatePickerDialog(getActivity(), date, year, month, day).show();
-                }        }
+                } */
+        }
     }
 
     /**

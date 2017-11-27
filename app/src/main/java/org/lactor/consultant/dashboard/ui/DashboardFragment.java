@@ -4,9 +4,16 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import org.lactor.consultant.R;
 
@@ -18,6 +25,9 @@ import org.lactor.consultant.R;
  * Use the {@link DashboardFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
+
+
 public class DashboardFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,7 +40,11 @@ public class DashboardFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
+    ArrayList personNames = new ArrayList<>(Arrays.asList("Person 1", "Person 2", "Person 3", "Person 4", "Person 5", "Person 6", "Person 7","Person 8", "Person 9", "Person 10", "Person 11", "Person 12", "Person 13", "Person 14", "Person 15", "Person 16", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17", "Person 17"));
+
     public DashboardFragment() {
+
+
         // Required empty public constructor
     }
 
@@ -65,7 +79,17 @@ public class DashboardFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_dashboard, container, false);
+        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        // get the reference of RecyclerView
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
+        // set a LinearLayoutManager with default vertical orientation
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext());
+        recyclerView.setLayoutManager(linearLayoutManager);
+        // call the constructor of CustomAdapter to send the reference and data to Adapter
+        DashboardAdapter customAdapter = new DashboardAdapter(personNames);
+        recyclerView.setAdapter(customAdapter); // set the Adapter to RecyclerView
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

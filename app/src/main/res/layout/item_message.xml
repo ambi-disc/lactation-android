@@ -4,7 +4,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="wrap_content"
-              android:paddingTop="8dp">
+              android:paddingTop="10dp">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -34,6 +34,20 @@
         android:id="@+id/message_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        android:layout_marginTop="8dp"
+        />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/black"
+        android:layout_marginTop="8dp"
+        />
 
     <View
         android:layout_width="match_parent"
