@@ -3,48 +3,29 @@ package org.lactor.consultant.dashboard.ui;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import org.lactor.consultant.R;
 import org.lactor.consultant.core.model.Mother;
-import org.lactor.consultant.core.webrequests.LactorApiHelper;
-import org.lactor.consultant.homepage.ui.MainActivity;
-
-import java.io.IOException;
-import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link DashboardFragment.OnFragmentInteractionListener} interface
+ * {@link MotherFragment.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link DashboardFragment#newInstance} factory method to
+ * Use the {@link MotherFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+public class MotherFragment extends Fragment {
+    private static final String MOTHER_ARG = "mother";
 
-
-
-public class DashboardFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private Mother mMother;
 
     private OnFragmentInteractionListener mListener;
-
-    public DashboardFragment() {
-        // Required empty public constructor
-    }
 
     /**
      * Use this factory method to create a new instance of
@@ -52,14 +33,13 @@ public class DashboardFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment DashboardFragment.
+     * @return A new instance of fragment MotherFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static DashboardFragment newInstance(String param1, String param2) {
-        DashboardFragment fragment = new DashboardFragment();
+    public static MotherFragment newInstance(Mother mother) {
+        MotherFragment fragment = new MotherFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putParcelable(MOTHER_ARG, mother);
         fragment.setArguments(args);
         return fragment;
     }
@@ -68,34 +48,27 @@ public class DashboardFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            mMother = getArguments().getParcelable(MOTHER_ARG);
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        // get the reference of RecyclerView
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recyclerView);
-        // set a LinearLayoutManager with default vertical orientation
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(view.getContext());
-        recyclerView.setLayoutManager(linearLayoutManager);
-        // call the constructor of CustomAdapter to send the reference and data to Adapter
-
-        try {
-            // TODO this is kinda bad, you should throw this into an async talk when you have time.
-            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-            StrictMode.setThreadPolicy(policy);
-            List<Mother> mothers = LactorApiHelper.getInstance().getListOfMothers("AXNTHAUONTUOAENHTOEUA").execute().body().mothers;
-            DashboardAdapter customAdapter = new DashboardAdapter(mothers, (MainActivity) getActivity());
-            recyclerView.setAdapter(customAdapter); // set the Adapter to RecyclerView
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        View view = inflater.inflate(R.layout.fragment_mother, container, false);
+        ((TextView)view.findViewById(R.id.mother_fragment_name)).setText(mMother.name);
+        ((TextView)view.findViewById(R.id.mother_fragment_address)).setText(mMother.address);
+        ((TextView)view.findViewById(R.id.mother_fragment_age)).setText(mMother.age);
+        ((TextView)view.findViewById(R.id.mother_fragment_ethnicity)).setText(mMother.ethnicity);
+        ((TextView)view.findViewById(R.id.mother_fragment_race)).setText(mMother.race);
+        ((TextView)view.findViewById(R.id.mother_fragment_education)).setText(mMother.education);
+        ((TextView)view.findViewById(R.id.mother_fragment_income)).setText(mMother.houseIncome);
+        ((TextView)view.findViewById(R.id.mother_fragment_occupation)).setText(mMother.occupation);
+        ((TextView)view.findViewById(R.id.mother_fragment_residence)).setText(mMother.residence);
+        ((TextView)view.findViewById(R.id.mother_fragment_mhdp)).setText(mMother.mhdp);
+        ((TextView)view.findViewById(R.id.mother_fragment_delivery)).setText(mMother.methodOfDelivery);
+        ((TextView)view.findViewById(R.id.mother_fragment_pbe)).setText(mMother.pbe);
+        ((TextView)view.findViewById(R.id.mother_fragment_phone)).setText(mMother.phone);
         return view;
     }
 

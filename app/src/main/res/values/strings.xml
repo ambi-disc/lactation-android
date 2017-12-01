@@ -292,4 +292,17 @@
     <string name="longtext">LACTOR is an innovative, interactive web-based breastfeeding monitoring system. LACTOR was created to help breastfeeding mothers monitor their breastfeeding patterns and detect early breastfeeding problems. The lactation consultant can also monitor mothers data and intervene immediately in case of a breastfeeding problem. Mothers also receive notifications if they have any breastfeeding problem with suggestions to help solve the problem</string>
     <string name="mother">Mother</string>
     <string name="questionnaire">Questionnaire</string>
+    <string name="name_tag">Name:</string>
+    <string name="address_tag">Address:</string>
+    <string name="age_tag">Age:</string>
+    <string name="ethnicity_tag">Ethnicity:</string>
+    <string name="race_tag">Race:</string>
+    <string name="education_tag">Education:</string>
+    <string name="income_tag">House Income:</string>
+    <string name="occupation_tag">Occupation:</string>
+    <string name="residence_tag">Residence:</string>
+    <string name="mhdp">Maternal History During Pregnancy:</string>
+    <string name="delivery_tag">Method of delivery:</string>
+    <string name="pbe_tag">Past Breastfeeding Experience:</string>
+    <string name="phone_tag">Phone:</string>
 </resources>

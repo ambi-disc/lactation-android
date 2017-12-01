@@ -4,6 +4,6 @@ import org.lactor.consultant.core.model.Mother;
 
 import java.util.List;
 
-class MothersResult {
+public class MothersResult {
     public List<Mother> mothers;
 }

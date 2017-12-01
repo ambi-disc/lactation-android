@@ -20,7 +20,10 @@ import org.lactor.consultant.accounts.ui.ViewEditChildInformationFragment;
 import org.lactor.consultant.accounts.ui.ViewEditMotherInformationFragment;
 import org.lactor.consultant.about.ui.AboutFragment;
 import org.lactor.consultant.accounts.ui.AccountsFragment;
+import org.lactor.consultant.core.model.Mother;
+import org.lactor.consultant.dashboard.interfaces.SwitchToMother;
 import org.lactor.consultant.dashboard.ui.DashboardFragment;
+import org.lactor.consultant.dashboard.ui.MotherFragment;
 import org.lactor.consultant.displaydata.ui.DisplayDataFragment;
 import org.lactor.consultant.inbox.ui.tabfragment.ArchivedInboxFragment;
 import org.lactor.consultant.inbox.ui.tabfragment.ReceivedInboxFragment;
@@ -49,6 +52,8 @@ public class MainActivity
                    ArchivedInboxFragment.OnFragmentInteractionListener,
                    ReceivedInboxFragment.OnFragmentInteractionListener,
                    SentInboxFragment.OnFragmentInteractionListener,
+                   MotherFragment.OnFragmentInteractionListener,
+                   SwitchToMother,
                    View.OnClickListener {
 
     public static final String EXTRA_LOGIN_TOKEN = "LoginToken";
@@ -115,30 +120,39 @@ public class MainActivity
 
     private void selectItemFromDrawer(int position) {
         Fragment fragment = null;
+        String fragmentName = null;
+
         switch(position){
             case 0:
                 fragment = new DashboardFragment();
+                fragmentName = "Dashboard";
                 break;
             case 1:
                 fragment = new NotificationsFragment();
+                fragmentName = "Notifications";
                 break;
             case 2:
                 fragment = new DisplayDataFragment();
+                fragmentName = "Display Data";
                 break;
             case 3:
                 fragment = new InboxFragment();
+                fragmentName = "Inbox";
                 break;
             case 4:
                 fragment = new AccountsFragment();
+                fragmentName = "Accounts";
                 break;
             case 5:
                 fragment = new AboutFragment();
+                fragmentName = "About";
                 break;
         }
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.mainContent, fragment)
+                .addToBackStack(fragmentName)
                 .commit();
 
         mDrawerList.setItemChecked(position, true);
@@ -179,10 +193,23 @@ public class MainActivity
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction()
                         .replace(R.id.mainContent, fragment)
+                        .addToBackStack("Profile Page")
                         .commit();
                 setTitle("Your Profile");
                 mDrawerLayout.closeDrawer(mDrawerPane);
         }
+    }
+
+    @Override
+    public void switchToMother(Mother mother) {
+        Fragment fragment = MotherFragment.newInstance(mother);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.mainContent, fragment)
+                .addToBackStack(mother.name + " (mother)")
+                .commit();
+        setTitle(mother.name + " (mother)");
+        mDrawerLayout.closeDrawer(mDrawerPane);
     }
 
     /*

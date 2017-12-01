@@ -6,18 +6,22 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.lactor.consultant.R;
+import org.lactor.consultant.core.model.Mother;
+import org.lactor.consultant.dashboard.interfaces.SwitchToMother;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by nbeesett on 11/21/17.
  */
 
 public class DashboardAdapter extends RecyclerView.Adapter<DashboardViewHolder> {
-    ArrayList<String> personNames;
+    List<Mother> mothers;
+    SwitchToMother switchToMotherInterface;
 
-    public DashboardAdapter(ArrayList<String> personNames) {
-        this.personNames = personNames;
+    public DashboardAdapter(List<Mother> mothers, SwitchToMother switchToMotherInterface) {
+        this.mothers = mothers;
+        this.switchToMotherInterface = switchToMotherInterface;
     }
     @Override
     public DashboardViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -28,16 +32,20 @@ public class DashboardAdapter extends RecyclerView.Adapter<DashboardViewHolder> 
 
     @Override
     public void onBindViewHolder(DashboardViewHolder holder, final int position) {
-        holder.name.setText(personNames.get(position));
+        final Mother mother = mothers.get(position);
+        holder.name.setText(mother.name);
+        holder.age.setText(mother.age);
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // TODO
+                System.out.println("Switching to mother " + position);
+                switchToMotherInterface.switchToMother(mother);
             }
         });
     }
+
     @Override
     public int getItemCount() {
-        return personNames.size();
+        return mothers.size();
     }
 }
