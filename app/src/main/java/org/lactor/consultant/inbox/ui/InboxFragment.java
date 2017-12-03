@@ -19,16 +19,8 @@ import org.lactor.consultant.inbox.ui.tabfragment.SentInboxFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link AccountsFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link AccountsFragment#} factory method to
- * create an instance of this fragment.
- */
 public class InboxFragment extends Fragment {
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,20 +29,13 @@ public class InboxFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-
         View view = inflater.inflate(R.layout.fragment_inbox,container, false);
-        // Setting ViewPager for each Tabs
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewpager);
         setupViewPager(viewPager);
-        // Set Tabs inside Toolbar
         TabLayout tabs = (TabLayout) view.findViewById(R.id.result_tabs);
         tabs.setupWithViewPager(viewPager);
-
-
         return view;
-
     }
-
 
     // Add Fragments to Tabs
     private void setupViewPager(ViewPager viewPager) {
