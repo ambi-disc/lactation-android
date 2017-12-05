@@ -13,13 +13,13 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
-import org.lactor.consultant.accounts.ui.ManageUsersFragment;
 import org.lactor.consultant.R;
+import org.lactor.consultant.about.ui.AboutFragment;
+import org.lactor.consultant.accounts.ui.AccountsFragment;
+import org.lactor.consultant.accounts.ui.ManageUsersFragment;
 import org.lactor.consultant.accounts.ui.QuestionnairesFragment;
 import org.lactor.consultant.accounts.ui.ViewEditChildInformationFragment;
 import org.lactor.consultant.accounts.ui.ViewEditMotherInformationFragment;
-import org.lactor.consultant.about.ui.AboutFragment;
-import org.lactor.consultant.accounts.ui.AccountsFragment;
 import org.lactor.consultant.core.model.Mother;
 import org.lactor.consultant.dashboard.interfaces.SwitchToMother;
 import org.lactor.consultant.dashboard.ui.DashboardFragment;
@@ -29,10 +29,14 @@ import org.lactor.consultant.displaydata.model.MorbidityEntry;
 import org.lactor.consultant.displaydata.model.OutputEntry;
 import org.lactor.consultant.displaydata.model.SupplementEntry;
 import org.lactor.consultant.displaydata.ui.DisplayDataFragment;
+import org.lactor.consultant.displaydata.ui.DisplayDataResultsFragment;
+import org.lactor.consultant.displaydata.ui.DisplayMorbidityDataFragment;
+import org.lactor.consultant.displaydata.ui.DisplayOutputDataFragment;
+import org.lactor.consultant.displaydata.ui.DisplaySupplementDataFragment;
+import org.lactor.consultant.inbox.ui.InboxFragment;
 import org.lactor.consultant.inbox.ui.tabfragment.ArchivedInboxFragment;
 import org.lactor.consultant.inbox.ui.tabfragment.ReceivedInboxFragment;
 import org.lactor.consultant.inbox.ui.tabfragment.SentInboxFragment;
-import org.lactor.consultant.inbox.ui.InboxFragment;
 import org.lactor.consultant.notifications.ui.NotificationsFragment;
 import org.lactor.consultant.preferences.ui.PreferencesFragment;
 import org.lactor.consultant.profile.fragment.ProfileFragment;
@@ -58,6 +62,11 @@ public class MainActivity
                    ReceivedInboxFragment.OnFragmentInteractionListener,
                    SentInboxFragment.OnFragmentInteractionListener,
                    MotherFragment.OnFragmentInteractionListener,
+                   DisplayDataResultsFragment.OnFragmentInteractionListener,
+                   DisplayBreastfeedingDataFragment.OnFragmentInteractionListener,
+                   DisplaySupplementDataFragment.OnFragmentInteractionListener,
+                   DisplayOutputDataFragment.OnFragmentInteractionListener,
+                   DisplayMorbidityDataFragment.OnFragmentInteractionListener,
                    SwitchToMother,
                    View.OnClickListener {
 
@@ -137,7 +146,7 @@ public class MainActivity
                 fragmentName = "Notifications";
                 break;
             case 2:
-                fragment = new DisplayDataFragment();
+                fragment = new DisplayDataResultsFragment();
                 fragmentName = "Display Data";
                 break;
             case 3:
