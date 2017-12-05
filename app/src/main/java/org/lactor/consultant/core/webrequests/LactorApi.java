@@ -28,6 +28,11 @@ public interface LactorApi {
             @Query("authToken") String authToken
     );
 
+ /*   @GET("/account/scientist")
+    Call <Boolean> verifyToken(
+            @Query("authToken") String authToken
+    ); */
+
     @GET("/mothers")
     Call<MothersResult> getListOfMothers(
             @Query("authToken") String authToken

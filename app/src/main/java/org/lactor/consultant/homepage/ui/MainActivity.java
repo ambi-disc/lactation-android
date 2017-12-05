@@ -24,6 +24,10 @@ import org.lactor.consultant.core.model.Mother;
 import org.lactor.consultant.dashboard.interfaces.SwitchToMother;
 import org.lactor.consultant.dashboard.ui.DashboardFragment;
 import org.lactor.consultant.dashboard.ui.MotherFragment;
+import org.lactor.consultant.displaydata.model.BreastfeedEntry;
+import org.lactor.consultant.displaydata.model.MorbidityEntry;
+import org.lactor.consultant.displaydata.model.OutputEntry;
+import org.lactor.consultant.displaydata.model.SupplementEntry;
 import org.lactor.consultant.displaydata.ui.DisplayDataFragment;
 import org.lactor.consultant.inbox.ui.tabfragment.ArchivedInboxFragment;
 import org.lactor.consultant.inbox.ui.tabfragment.ReceivedInboxFragment;
@@ -34,6 +38,7 @@ import org.lactor.consultant.preferences.ui.PreferencesFragment;
 import org.lactor.consultant.profile.fragment.ProfileFragment;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity
         extends AppCompatActivity
@@ -203,6 +208,23 @@ public class MainActivity
     @Override
     public void switchToMother(Mother mother) {
         Fragment fragment = MotherFragment.newInstance(mother);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.mainContent, fragment)
+                .addToBackStack(mother.name + " (mother)")
+                .commit();
+        setTitle(mother.name + " (mother)");
+        mDrawerLayout.closeDrawer(mDrawerPane);
+    }
+
+    @Override
+    public void onRetrievedDiaryInfo(
+            List<BreastfeedEntry> breastfeedEntries,
+            List<MorbidityEntry> morbidityEntries,
+            List<OutputEntry> outputEntries,
+            List<SupplementEntry> supplementEntries
+    ) {
+        Fragment fragment = .newInstance(mother);
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.mainContent, fragment)

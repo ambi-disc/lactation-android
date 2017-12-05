@@ -4,17 +4,32 @@ import android.app.DatePickerDialog;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import org.lactor.consultant.R;
+import org.lactor.consultant.core.model.Mother;
+import org.lactor.consultant.core.webrequests.LactorApiHelper;
+import org.lactor.consultant.dashboard.ui.DashboardAdapter;
+import org.lactor.consultant.displaydata.model.BreastfeedEntry;
+import org.lactor.consultant.displaydata.model.MorbidityEntry;
+import org.lactor.consultant.displaydata.model.OutputEntry;
+import org.lactor.consultant.displaydata.model.SupplementEntry;
+import org.lactor.consultant.displaydata.webrequests.DiaryDataResponse;
+import org.lactor.consultant.homepage.ui.MainActivity;
 
+import java.io.IOException;
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 import java.util.Locale;
 
 
@@ -37,9 +52,8 @@ public class DisplayDataFragment extends Fragment implements View.OnClickListene
     private static final String ARG_PARAM2 = "param2";
     public static Calendar filterMethodDateStart = null;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private String[] mMotherNames;
+    private List<Mother> mMothers;
 
     private OnFragmentInteractionListener mListener;
 
@@ -65,16 +79,10 @@ public class DisplayDataFragment extends Fragment implements View.OnClickListene
         return fragment;
     }
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if (getArguments() != null) {
-
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-
-        }
     }
 
     @Override
@@ -82,9 +90,39 @@ public class DisplayDataFragment extends Fragment implements View.OnClickListene
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_display_data, container, false);
-
+        view.findViewById(R.id.search_button).setOnClickListener(this);
         mStartDateTextView = (TextView) view.findViewById(R.id.textViewFrom);
         mStartDateTextView.setOnClickListener(this);
+
+        //create an object that gets mothers, store in a list-like array
+
+
+
+        try {
+            // TODO this is kinda bad, you should throw this into an async talk when you have time.
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            mMothers = LactorApiHelper.getInstance().getListOfMothers("AXNTHAUONTUOAENHTOEUA").execute().body().mothers;
+            for(int i=0; i < mMothers.size(); i++){
+                Mother mother = mMothers.get(i);
+                if(mother == null || mother.name == null) {
+                    mMothers.remove(i);
+                    i--;
+                }
+            }
+            mMotherNames = new String[mMothers.size()];
+            for(int i=0; i < mMothers.size(); i++){
+                mMotherNames[i] = mMothers.get(i).name;
+            }
+            Spinner s = (Spinner) view.findViewById(R.id.motherInformation);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(),
+                    android.R.layout.simple_spinner_item, mMotherNames);
+            s.setAdapter(adapter);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
 
         return view;
     }
@@ -116,6 +154,38 @@ public class DisplayDataFragment extends Fragment implements View.OnClickListene
     @Override
     public void onClick(View view) {
         switch(view.getId()){
+            case R.id.search_button:
+                String startDate;
+                String endDate;
+                int MotherID;
+
+                startDate= ((TextView)getView().findViewById(R.id.textViewTo)).getText().toString();
+                endDate = ((TextView)getView().findViewById(R.id.textViewFrom)).getText().toString();
+                MotherID = mMothers.get(((Spinner)getView().findViewById(R.id.MotherName)).getSelectedItemPosition()).motherId;
+
+
+                try {
+                    DiaryDataResponse response = LactorApiHelper.getInstance().getDiaryData(
+                            "AXNTHAUONTUOAENHTOEUA",
+                            startDate,
+                            endDate,
+                            true,
+                            true,
+                            true,
+                            true
+                    ).execute().body();
+                    ((MainActivity)getActivity()).onRetrievedDiaryInfo(
+                            response.breastfeedEntries,
+                            response.morbidityEntries,
+                            response.outputEntries,
+                            response.supplementEntries
+                    );
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                break;
             case R.id.textViewFrom:
                 /*DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
                     @Override
@@ -165,7 +235,11 @@ public class DisplayDataFragment extends Fragment implements View.OnClickListene
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void onRetrievedDiaryInfo(
+                List<BreastfeedEntry> breastfeedEntries,
+                List<MorbidityEntry> morbidityEntries,
+                List<OutputEntry> outputEntries,
+                List<SupplementEntry> supplementEntries
+        );
     }
 }

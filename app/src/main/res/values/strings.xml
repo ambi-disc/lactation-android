@@ -11,8 +11,7 @@
     <string name="submit">Submit</string>
     <string name="acct_reg">Account Registration</string>
 
-    <string name="app_name1">Galacticion</string>
-    <string name="api_key">https://api.nasa.gov/planetary/apod?api_key=WqPK2CwVKmNrxxBNl77QlH3aJPlDTPMha3XT6wiM</string>
+
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="change_layout_manager">Change Layout</string>
     <string-array name="organization">
