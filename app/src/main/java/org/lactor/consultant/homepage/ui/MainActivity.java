@@ -28,6 +28,7 @@ import org.lactor.consultant.displaydata.model.BreastfeedEntry;
 import org.lactor.consultant.displaydata.model.MorbidityEntry;
 import org.lactor.consultant.displaydata.model.OutputEntry;
 import org.lactor.consultant.displaydata.model.SupplementEntry;
+import org.lactor.consultant.displaydata.ui.DisplayBreastfeedingDataFragment;
 import org.lactor.consultant.displaydata.ui.DisplayDataFragment;
 import org.lactor.consultant.displaydata.ui.DisplayDataResultsFragment;
 import org.lactor.consultant.displaydata.ui.DisplayMorbidityDataFragment;
@@ -146,7 +147,7 @@ public class MainActivity
                 fragmentName = "Notifications";
                 break;
             case 2:
-                fragment = new DisplayDataResultsFragment();
+                fragment = new DisplayDataFragment();
                 fragmentName = "Display Data";
                 break;
             case 3:
@@ -228,18 +229,25 @@ public class MainActivity
 
     @Override
     public void onRetrievedDiaryInfo(
+            Mother mother,
             List<BreastfeedEntry> breastfeedEntries,
             List<MorbidityEntry> morbidityEntries,
             List<OutputEntry> outputEntries,
             List<SupplementEntry> supplementEntries
     ) {
-        Fragment fragment = .newInstance(mother);
+        Fragment fragment = DisplayDataResultsFragment.newInstance(
+                mother,
+                new ArrayList<BreastfeedEntry>(breastfeedEntries),
+                new ArrayList<SupplementEntry>(supplementEntries),
+                new ArrayList<OutputEntry>(outputEntries),
+                new ArrayList<MorbidityEntry>(morbidityEntries)
+        );
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.mainContent, fragment)
-                .addToBackStack(mother.name + " (mother)")
+                .addToBackStack(mother.name + " (Diary)")
                 .commit();
-        setTitle(mother.name + " (mother)");
+        setTitle(mother.name + " (Diary)");
         mDrawerLayout.closeDrawer(mDrawerPane);
     }
 

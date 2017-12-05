@@ -127,13 +127,6 @@ public class DisplayDataFragment extends Fragment implements View.OnClickListene
         return view;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    public void onButtonPressed(Uri uri) {
-        if (mListener != null) {
-            mListener.onFragmentInteraction(uri);
-        }
-    }
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -157,30 +150,46 @@ public class DisplayDataFragment extends Fragment implements View.OnClickListene
             case R.id.search_button:
                 String startDate;
                 String endDate;
-                int MotherID;
+                int motherID;
 
                 startDate= ((TextView)getView().findViewById(R.id.textViewTo)).getText().toString();
                 endDate = ((TextView)getView().findViewById(R.id.textViewFrom)).getText().toString();
-                MotherID = mMothers.get(((Spinner)getView().findViewById(R.id.MotherName)).getSelectedItemPosition()).motherId;
+                Mother mother = mMothers.get(((Spinner)getView().findViewById(R.id.motherInformation)).getSelectedItemPosition());
+                motherID = mother.motherId;
 
 
                 try {
-                    DiaryDataResponse response = LactorApiHelper.getInstance().getDiaryData(
-                            "AXNTHAUONTUOAENHTOEUA",
-                            startDate,
-                            endDate,
-                            true,
-                            true,
-                            true,
-                            true
-                    ).execute().body();
-                    ((MainActivity)getActivity()).onRetrievedDiaryInfo(
-                            response.breastfeedEntries,
-                            response.morbidityEntries,
-                            response.outputEntries,
-                            response.supplementEntries
-                    );
-
+                    if (startDate == null || startDate.isEmpty() || endDate == null || endDate.isEmpty()) {
+                        DiaryDataResponse response = LactorApiHelper.getInstance().getDiaryData(
+                                "AXNTHAUONTUOAENHTOEUA",
+                                motherID
+                        ).execute().body();
+                        ((MainActivity)getActivity()).onRetrievedDiaryInfo(
+                                mother,
+                                response.breastfeedEntries,
+                                response.morbidityEntries,
+                                response.outputEntries,
+                                response.supplementEntries
+                        );
+                    } else {
+                        DiaryDataResponse response = LactorApiHelper.getInstance().getDiaryData(
+                                "AXNTHAUONTUOAENHTOEUA",
+                                motherID,
+                                startDate,
+                                endDate,
+                                true,
+                                true,
+                                true,
+                                true
+                        ).execute().body();
+                        ((MainActivity)getActivity()).onRetrievedDiaryInfo(
+                                mother,
+                                response.breastfeedEntries,
+                                response.morbidityEntries,
+                                response.outputEntries,
+                                response.supplementEntries
+                        );
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -236,6 +245,7 @@ public class DisplayDataFragment extends Fragment implements View.OnClickListene
      */
     public interface OnFragmentInteractionListener {
         void onRetrievedDiaryInfo(
+                Mother mother,
                 List<BreastfeedEntry> breastfeedEntries,
                 List<MorbidityEntry> morbidityEntries,
                 List<OutputEntry> outputEntries,

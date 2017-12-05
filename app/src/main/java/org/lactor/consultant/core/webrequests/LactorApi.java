@@ -41,11 +41,18 @@ public interface LactorApi {
     @GET("/diary")
     Call<DiaryDataResponse> getDiaryData(
             @Query("authToken") String authToken,
+            @Query("motherId") int motherId,
             @Query("startDate") String startDate,
             @Query("endDate") String endDate,
             @Query("breastfeeding") boolean breastfeeding,
             @Query("supplement") boolean supplement,
             @Query("output") boolean output,
             @Query("healthIssues") boolean healthIssues
+    );
+
+    @GET("/diary")
+    Call<DiaryDataResponse> getDiaryData(
+            @Query("authToken") String authToken,
+            @Query("motherId") int motherId
     );
 }
