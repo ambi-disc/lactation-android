@@ -75,7 +75,7 @@ public class DisplayDataResultsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view =  inflater.inflate(R.layout.fragment_display_data_results, container, false);
+        View view = inflater.inflate(R.layout.fragment_display_data_results, container, false);
         ViewPager viewPager = (ViewPager) view.findViewById(R.id.viewpager);
         setupViewPager(viewPager);
         TabLayout tabs = (TabLayout) view.findViewById(R.id.result_tabs);
@@ -86,10 +86,30 @@ public class DisplayDataResultsFragment extends Fragment {
     // Add Fragments to Tabs
     private void setupViewPager(ViewPager viewPager) {
         DisplayDataResultsFragment.Adapter adapter = new DisplayDataResultsFragment.Adapter(getChildFragmentManager());
-        adapter.addFragment(new DisplayBreastfeedingDataFragment(), "Breastfeeding");
-        adapter.addFragment(new DisplaySupplementDataFragment(), "Supplement");
-        adapter.addFragment(new DisplayOutputDataFragment(), "Output");
-        adapter.addFragment(new DisplayMorbidityDataFragment(), "Morbidity");
+        adapter.addFragment(
+                DisplayBreastfeedingDataFragment.newInstance(
+                        mMother,
+                        new ArrayList<>(mBreastfeedEntryList)),
+                "Breastfeeding"
+        );
+        adapter.addFragment(
+                DisplaySupplementDataFragment.newInstance(
+                        mMother,
+                        new ArrayList<>(mSupplementEntryList)),
+                "Supplement"
+        );
+        adapter.addFragment(
+                DisplayOutputDataFragment.newInstance(
+                        mMother,
+                        new ArrayList<>(mOutputEntryList)),
+                "Output"
+        );
+        adapter.addFragment(
+                DisplayMorbidityDataFragment.newInstance(
+                        mMother,
+                        new ArrayList<>(mMorbidityEntryList)),
+                "Morbidity"
+        );
         viewPager.setAdapter(adapter);
     }
 
