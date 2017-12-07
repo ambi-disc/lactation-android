@@ -1,4 +1,4 @@
-package org.lactor.consultant.displaydata.ui;
+package org.lactor.consultant.displaydata.ui.supplement;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,26 +10,26 @@ import android.view.ViewGroup;
 
 import org.lactor.consultant.R;
 import org.lactor.consultant.core.model.Mother;
-import org.lactor.consultant.displaydata.model.BreastfeedEntry;
+import org.lactor.consultant.displaydata.model.SupplementEntry;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DisplayBreastfeedingDataFragment extends Fragment {
+public class DisplaySupplementDataFragment extends Fragment {
     private static final String ARG_MOTHER = "mother";
     private static final String ARG_ENTRIES = "entries";
 
     private Mother mMother;
-    private List<BreastfeedEntry> mBreastfeedEntries;
+    private List<SupplementEntry> mBreastfeedEntries;
 
-    private DisplayBreastfeedingDataFragment.OnFragmentInteractionListener mListener;
+    private OnFragmentInteractionListener mListener;
 
-    public DisplayBreastfeedingDataFragment() {
+    public DisplaySupplementDataFragment() {
         // Required empty public constructor
     }
 
-    public static DisplayBreastfeedingDataFragment newInstance(Mother mother, ArrayList<BreastfeedEntry> breastfeedEntries) {
-        DisplayBreastfeedingDataFragment fragment = new DisplayBreastfeedingDataFragment();
+    public static DisplaySupplementDataFragment newInstance(Mother mother, ArrayList<SupplementEntry> breastfeedEntries) {
+        DisplaySupplementDataFragment fragment = new DisplaySupplementDataFragment();
         Bundle args = new Bundle();
         args.putParcelable(ARG_MOTHER, mother);
         args.putParcelableArrayList(ARG_ENTRIES, breastfeedEntries);
@@ -50,7 +50,7 @@ public class DisplayBreastfeedingDataFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_display_breastfeeding_data, container, false);
+        return inflater.inflate(R.layout.fragment_display_supplement_data, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

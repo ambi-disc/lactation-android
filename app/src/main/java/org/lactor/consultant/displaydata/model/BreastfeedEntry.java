@@ -10,23 +10,23 @@ import android.os.Parcelable;
 
 public class BreastfeedEntry implements Parcelable {
     public long timestamp;
-    public String breastfeedingDuration;
-    public String pumpingMethod;
-    public String infantState;
-    public String maternalProblems;
+    public String breastfeedingduration;
+    public String pumpingmethod;
+    public String infantstate;
+    public String maternalproblems;
     public String latching;
     public String side;
-    public String pumpingAmount;
+    public String pumpingamount;
 
     protected BreastfeedEntry(Parcel in) {
         timestamp = in.readLong();
-        breastfeedingDuration = in.readString();
-        pumpingMethod = in.readString();
-        infantState = in.readString();
-        maternalProblems = in.readString();
+        breastfeedingduration = in.readString();
+        pumpingmethod = in.readString();
+        infantstate = in.readString();
+        maternalproblems = in.readString();
         latching = in.readString();
         side = in.readString();
-        pumpingAmount = in.readString();
+        pumpingamount = in.readString();
     }
 
     public static final Creator<BreastfeedEntry> CREATOR = new Creator<BreastfeedEntry>() {
@@ -49,12 +49,12 @@ public class BreastfeedEntry implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeLong(timestamp);
-        parcel.writeString(breastfeedingDuration);
-        parcel.writeString(pumpingMethod);
-        parcel.writeString(infantState);
-        parcel.writeString(maternalProblems);
+        parcel.writeString(breastfeedingduration);
+        parcel.writeString(pumpingmethod);
+        parcel.writeString(infantstate);
+        parcel.writeString(maternalproblems);
         parcel.writeString(latching);
         parcel.writeString(side);
-        parcel.writeString(pumpingAmount);
+        parcel.writeString(pumpingamount);
     }
 }

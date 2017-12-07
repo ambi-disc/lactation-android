@@ -1,4 +1,4 @@
-package org.lactor.consultant.displaydata.ui;
+package org.lactor.consultant.displaydata.ui.morbidity;
 
 import android.content.Context;
 import android.net.Uri;
@@ -10,38 +10,29 @@ import android.view.ViewGroup;
 
 import org.lactor.consultant.R;
 import org.lactor.consultant.core.model.Mother;
-import org.lactor.consultant.displaydata.model.OutputEntry;
-import org.lactor.consultant.displaydata.model.SupplementEntry;
+import org.lactor.consultant.displaydata.model.MorbidityEntry;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link DisplayOutputDataFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link DisplayOutputDataFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class DisplayOutputDataFragment extends Fragment {
+public class DisplayMorbidityDataFragment extends Fragment {
     private static final String ARG_MOTHER = "mother";
     private static final String ARG_ENTRIES = "entries";
 
     private Mother mMother;
-    private List<SupplementEntry> mBreastfeedEntries;
+    private List<MorbidityEntry> mMorbidityEntries;
 
     private OnFragmentInteractionListener mListener;
 
-    public DisplayOutputDataFragment() {
+    public DisplayMorbidityDataFragment() {
         // Required empty public constructor
     }
 
-    public static DisplayOutputDataFragment newInstance(Mother mother, ArrayList<OutputEntry> breastfeedEntries) {
-        DisplayOutputDataFragment fragment = new DisplayOutputDataFragment();
+    public static DisplayMorbidityDataFragment newInstance(Mother mother, ArrayList<MorbidityEntry> morbidityEntries) {
+        DisplayMorbidityDataFragment fragment = new DisplayMorbidityDataFragment();
         Bundle args = new Bundle();
         args.putParcelable(ARG_MOTHER, mother);
-        args.putParcelableArrayList(ARG_ENTRIES, breastfeedEntries);
+        args.putParcelableArrayList(ARG_ENTRIES, morbidityEntries);
         fragment.setArguments(args);
         return fragment;
     }
@@ -51,7 +42,7 @@ public class DisplayOutputDataFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mMother = getArguments().getParcelable(ARG_MOTHER);
-            mBreastfeedEntries = getArguments().getParcelableArrayList(ARG_ENTRIES);
+            mMorbidityEntries = getArguments().getParcelableArrayList(ARG_ENTRIES);
         }
     }
 
@@ -59,7 +50,7 @@ public class DisplayOutputDataFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_display_output_data, container, false);
+        return inflater.inflate(R.layout.fragment_display_morbidity_data, container, false);
     }
 
     // TODO: Rename method, update argument and hook method into UI event

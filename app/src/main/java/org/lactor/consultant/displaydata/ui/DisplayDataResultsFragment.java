@@ -18,6 +18,10 @@ import org.lactor.consultant.displaydata.model.BreastfeedEntry;
 import org.lactor.consultant.displaydata.model.MorbidityEntry;
 import org.lactor.consultant.displaydata.model.OutputEntry;
 import org.lactor.consultant.displaydata.model.SupplementEntry;
+import org.lactor.consultant.displaydata.ui.breastfeeding.DisplayBreastfeedingDataFragment;
+import org.lactor.consultant.displaydata.ui.morbidity.DisplayMorbidityDataFragment;
+import org.lactor.consultant.displaydata.ui.output.DisplayOutputDataFragment;
+import org.lactor.consultant.displaydata.ui.supplement.DisplaySupplementDataFragment;
 
 import java.util.ArrayList;
 import java.util.List;

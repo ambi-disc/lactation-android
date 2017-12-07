@@ -1,35 +1,41 @@
-package org.lactor.consultant.displaydata.ui;
+package org.lactor.consultant.displaydata.ui.breastfeeding;
 
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import org.lactor.consultant.R;
 import org.lactor.consultant.core.model.Mother;
-import org.lactor.consultant.displaydata.model.SupplementEntry;
+import org.lactor.consultant.displaydata.model.BreastfeedEntry;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DisplaySupplementDataFragment extends Fragment {
+public class DisplayBreastfeedingDataFragment extends Fragment {
     private static final String ARG_MOTHER = "mother";
     private static final String ARG_ENTRIES = "entries";
 
     private Mother mMother;
-    private List<SupplementEntry> mBreastfeedEntries;
+    private List<BreastfeedEntry> mBreastfeedEntries;
 
-    private OnFragmentInteractionListener mListener;
+    private DisplayBreastfeedingDataFragment.OnFragmentInteractionListener mListener;
 
-    public DisplaySupplementDataFragment() {
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+
+    public DisplayBreastfeedingDataFragment() {
         // Required empty public constructor
     }
 
-    public static DisplaySupplementDataFragment newInstance(Mother mother, ArrayList<SupplementEntry> breastfeedEntries) {
-        DisplaySupplementDataFragment fragment = new DisplaySupplementDataFragment();
+    public static DisplayBreastfeedingDataFragment newInstance(Mother mother, ArrayList<BreastfeedEntry> breastfeedEntries) {
+        DisplayBreastfeedingDataFragment fragment = new DisplayBreastfeedingDataFragment();
         Bundle args = new Bundle();
         args.putParcelable(ARG_MOTHER, mother);
         args.putParcelableArrayList(ARG_ENTRIES, breastfeedEntries);
@@ -50,7 +56,15 @@ public class DisplaySupplementDataFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_display_supplement_data, container, false);
+        View view = inflater.inflate(R.layout.fragment_display_breastfeeding_data, container, false);
+
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.breastfeeding_recycler_view);
+        mLayoutManager = new LinearLayoutManager(view.getContext());
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mAdapter = new BreastfeedingAdapter(mBreastfeedEntries);
+        mRecyclerView.setAdapter(mAdapter);
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
