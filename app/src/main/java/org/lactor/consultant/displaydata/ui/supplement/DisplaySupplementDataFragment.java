@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,9 +22,13 @@ public class DisplaySupplementDataFragment extends Fragment {
     private static final String ARG_ENTRIES = "entries";
 
     private Mother mMother;
-    private List<SupplementEntry> mBreastfeedEntries;
+    private List<SupplementEntry> mSupplementEntries;
 
-    private OnFragmentInteractionListener mListener;
+    private DisplaySupplementDataFragment.OnFragmentInteractionListener mListener;
+
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
 
     public DisplaySupplementDataFragment() {
         // Required empty public constructor
@@ -42,7 +48,7 @@ public class DisplaySupplementDataFragment extends Fragment {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mMother = getArguments().getParcelable(ARG_MOTHER);
-            mBreastfeedEntries = getArguments().getParcelableArrayList(ARG_ENTRIES);
+            mSupplementEntries = getArguments().getParcelableArrayList(ARG_ENTRIES);
         }
     }
 

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,7 @@ import android.view.ViewGroup;
 import org.lactor.consultant.R;
 import org.lactor.consultant.core.model.Mother;
 import org.lactor.consultant.displaydata.model.MorbidityEntry;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +25,12 @@ public class DisplayMorbidityDataFragment extends Fragment {
     private Mother mMother;
     private List<MorbidityEntry> mMorbidityEntries;
 
-    private OnFragmentInteractionListener mListener;
+    private DisplayMorbidityDataFragment.OnFragmentInteractionListener mListener;
+
+    private RecyclerView mRecyclerView;
+    private RecyclerView.Adapter mAdapter;
+    private RecyclerView.LayoutManager mLayoutManager;
+
 
     public DisplayMorbidityDataFragment() {
         // Required empty public constructor
@@ -49,6 +57,14 @@ public class DisplayMorbidityDataFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View view = inflater.inflate(R.layout.fragment_display_morbidity_data, container, false);
+
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.morbidity_recycler_view);
+        mLayoutManager = new LinearLayoutManager(view.getContext());
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mAdapter = new MorbidityAdapter(mMorbidityEntries);
+        mRecyclerView.setAdapter(mAdapter);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_display_morbidity_data, container, false);
     }
