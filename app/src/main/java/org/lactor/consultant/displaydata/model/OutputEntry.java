@@ -10,19 +10,19 @@ import android.os.Parcelable;
 
 public class OutputEntry implements Parcelable {
     public long timestamp;
-    public String urineColor;
-    public String urineSaturation;
-    public String stoolColor;
-    public String stoolConsistency;
-    public String numberDiapers;
+    public String urinecolor;
+    public String urinesaturation;
+    public String stoolcolor;
+    public String stoolconsistency;
+    public String numberdiapers;
 
     protected OutputEntry(Parcel in) {
         timestamp = in.readLong();
-        urineColor = in.readString();
-        urineSaturation = in.readString();
-        stoolColor = in.readString();
-        stoolConsistency = in.readString();
-        numberDiapers = in.readString();
+        urinecolor = in.readString();
+        urinesaturation = in.readString();
+        stoolcolor = in.readString();
+        stoolconsistency = in.readString();
+        numberdiapers = in.readString();
     }
 
     public static final Creator<OutputEntry> CREATOR = new Creator<OutputEntry>() {
@@ -45,10 +45,10 @@ public class OutputEntry implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeLong(timestamp);
-        parcel.writeString(urineColor);
-        parcel.writeString(urineSaturation);
-        parcel.writeString(stoolColor);
-        parcel.writeString(stoolConsistency);
-        parcel.writeString(numberDiapers);
+        parcel.writeString(urinecolor);
+        parcel.writeString(urinesaturation);
+        parcel.writeString(stoolcolor);
+        parcel.writeString(stoolconsistency);
+        parcel.writeString(numberdiapers);
     }
 }

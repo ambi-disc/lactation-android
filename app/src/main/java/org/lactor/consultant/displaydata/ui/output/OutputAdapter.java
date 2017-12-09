@@ -19,6 +19,7 @@ public class OutputAdapter extends RecyclerView.Adapter<OutputViewHolder> {
     private List<OutputEntry> mOutputEntries;
 
     public OutputAdapter(List <OutputEntry> outputEntries){
+
         mOutputEntries = outputEntries;
     }
 
@@ -33,13 +34,19 @@ public class OutputAdapter extends RecyclerView.Adapter<OutputViewHolder> {
     public void onBindViewHolder(OutputViewHolder holder, int position){
         OutputEntry outputEntry = mOutputEntries.get(position);
         holder.date_output.setText("Dec 6 2018");
-        holder.urinecolor.setText("Urine Color" + outputEntry.urineColor);
-        holder.urinesaturation.setText("Urine Saturation"+ outputEntry.urineSaturation);
-        holder.stoolcolor.setText("Stool Color" + outputEntry.stoolColor);
-        holder.stoolconsistency.setText("Stool Consistency" + outputEntry.numberDiapers);
+        holder.urinecolor.setText("Urine Color: " + outputEntry.urinecolor);
+        holder.urinesaturation.setText("Urine Saturation: " + outputEntry.urinesaturation);
+        holder.stoolcolor.setText("Stool Color: " + "" + outputEntry.stoolcolor);
+        holder.stoolconsistency.setText("Stool Consistency: " + outputEntry.stoolconsistency);
+        holder.numberofdiapers.setText("Number of Diapers: " +
+                (outputEntry.numberdiapers != null ? outputEntry.numberdiapers : "Unknown")
+        );
 
     }
 
     @Override
-    public int getItemCount() { return mOutputEntries.size();}
+    public int getItemCount() {
+        System.out.println("****************************** Size: " + mOutputEntries.size());
+        return mOutputEntries.size();
+    }
 }

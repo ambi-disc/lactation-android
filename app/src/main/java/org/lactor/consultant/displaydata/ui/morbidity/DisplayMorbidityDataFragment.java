@@ -66,7 +66,7 @@ public class DisplayMorbidityDataFragment extends Fragment {
         mAdapter = new MorbidityAdapter(mMorbidityEntries);
         mRecyclerView.setAdapter(mAdapter);
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_display_morbidity_data, container, false);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

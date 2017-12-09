@@ -23,9 +23,10 @@ public class OutputViewHolder extends RecyclerView.ViewHolder {
         super(itemView);
         date_output = (TextView) itemView.findViewById(R.id.date_output);
         urinecolor = (TextView) itemView.findViewById(R.id.urinecolor);
-        stoolcolor = (TextView) itemView.findViewById(R.id.urinesaturation);
+        urinesaturation = (TextView) itemView.findViewById(R.id.urinesaturation);
+        stoolcolor = (TextView) itemView.findViewById(R.id.stoolcolor);
         stoolconsistency = (TextView) itemView.findViewById(R.id.stoolconsistency);
-        numberofdiapers = (TextView) itemView.findViewById(R.id.numberofdiapers);
+        numberofdiapers = (TextView) itemView.findViewById(R.id.numberdiapers);
     }
 
 }

@@ -34,11 +34,11 @@ public class DisplaySupplementDataFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static DisplaySupplementDataFragment newInstance(Mother mother, ArrayList<SupplementEntry> breastfeedEntries) {
+    public static DisplaySupplementDataFragment newInstance(Mother mother, ArrayList<SupplementEntry> supplementEntries) {
         DisplaySupplementDataFragment fragment = new DisplaySupplementDataFragment();
         Bundle args = new Bundle();
         args.putParcelable(ARG_MOTHER, mother);
-        args.putParcelableArrayList(ARG_ENTRIES, breastfeedEntries);
+        args.putParcelableArrayList(ARG_ENTRIES, supplementEntries);
         fragment.setArguments(args);
         return fragment;
     }
@@ -56,7 +56,17 @@ public class DisplaySupplementDataFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_display_supplement_data, container, false);
+        View view =  inflater.inflate(R.layout.fragment_display_supplement_data, container, false);
+
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.supplement_recycler_view);
+
+        mLayoutManager = new LinearLayoutManager(view.getContext());
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
+        mAdapter = new SupplementAdapter(mSupplementEntries);
+        mRecyclerView.setAdapter(mAdapter);
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

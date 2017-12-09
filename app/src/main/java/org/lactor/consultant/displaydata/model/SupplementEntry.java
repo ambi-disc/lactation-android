@@ -10,19 +10,19 @@ import android.os.Parcelable;
 
 public class SupplementEntry implements Parcelable {
     public long timestamp;
-    public String supType;
-    public String supMethod;
-    public String numberDiapers;
-    public String totalAmount;
-    public String numberTimes;
+    public String suptype;
+    public String supmethod;
+    public String numberdiapers;
+    public String totalamount;
+    public String numbertimes;
 
     protected SupplementEntry(Parcel in) {
         timestamp = in.readLong();
-        supType = in.readString();
-        supMethod = in.readString();
-        numberDiapers = in.readString();
-        totalAmount = in.readString();
-        numberTimes = in.readString();
+        suptype = in.readString();
+        supmethod = in.readString();
+        numberdiapers = in.readString();
+        totalamount = in.readString();
+        numbertimes = in.readString();
     }
 
     public static final Creator<SupplementEntry> CREATOR = new Creator<SupplementEntry>() {
@@ -45,10 +45,10 @@ public class SupplementEntry implements Parcelable {
     @Override
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeLong(timestamp);
-        parcel.writeString(supType);
-        parcel.writeString(supMethod);
-        parcel.writeString(numberDiapers);
-        parcel.writeString(totalAmount);
-        parcel.writeString(numberTimes);
+        parcel.writeString(suptype);
+        parcel.writeString(supmethod);
+        parcel.writeString(numberdiapers);
+        parcel.writeString(totalamount);
+        parcel.writeString(numbertimes);
     }
 }
