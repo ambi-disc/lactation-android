@@ -9,7 +9,7 @@ import android.os.Parcelable;
  */
 
 public class BreastfeedEntry implements Parcelable {
-    public long timestamp;
+    public String entryDate;
     public String breastfeedingduration;
     public String pumpingmethod;
     public String infantstate;
@@ -19,7 +19,7 @@ public class BreastfeedEntry implements Parcelable {
     public String pumpingamount;
 
     protected BreastfeedEntry(Parcel in) {
-        timestamp = in.readLong();
+        entryDate = in.readString();
         breastfeedingduration = in.readString();
         pumpingmethod = in.readString();
         infantstate = in.readString();
@@ -48,7 +48,7 @@ public class BreastfeedEntry implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeLong(timestamp);
+        parcel.writeString(entryDate);
         parcel.writeString(breastfeedingduration);
         parcel.writeString(pumpingmethod);
         parcel.writeString(infantstate);

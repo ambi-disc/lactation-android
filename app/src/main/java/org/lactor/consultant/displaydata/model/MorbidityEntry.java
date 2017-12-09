@@ -9,11 +9,11 @@ import android.os.Parcelable;
  */
 
 public class MorbidityEntry implements Parcelable {
-    public long timestamp;
+    public String entryDate;
     public String type;
 
     protected MorbidityEntry(Parcel in) {
-        timestamp = in.readLong();
+        entryDate = in.readString();
         type = in.readString();
     }
 
@@ -36,7 +36,7 @@ public class MorbidityEntry implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeLong(timestamp);
+        parcel.writeString(entryDate);
         parcel.writeString(type);
     }
 }

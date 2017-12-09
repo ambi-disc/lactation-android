@@ -1,5 +1,6 @@
 package org.lactor.consultant.displaydata.ui.supplement;
 
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,7 +8,6 @@ import android.view.ViewGroup;
 import org.lactor.consultant.R;
 import org.lactor.consultant.displaydata.model.SupplementEntry;
 
-import android.support.v7.widget.RecyclerView;
 import java.util.List;
 
 
@@ -33,7 +33,7 @@ public class SupplementAdapter extends RecyclerView.Adapter<SupplementViewHolder
     @Override
     public void onBindViewHolder(SupplementViewHolder holder, int position) {
         SupplementEntry supplementEntry = mSupplementEntries.get(position);
-        holder.date_supplement.setText("Dec 5 2018");
+        holder.date_supplement.setText(supplementEntry.entryDate);
         holder.suptype.setText("Supplement Type " + supplementEntry.suptype);
         holder.supmethod.setText("Supplement Method " + supplementEntry.supmethod);
         holder.numberofdiapers.setText("Number of diapers " + supplementEntry.numberdiapers);

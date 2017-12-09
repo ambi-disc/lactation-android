@@ -31,9 +31,9 @@ public class OutputAdapter extends RecyclerView.Adapter<OutputViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(OutputViewHolder holder, int position){
+    public void onBindViewHolder(OutputViewHolder holder, int position) {
         OutputEntry outputEntry = mOutputEntries.get(position);
-        holder.date_output.setText("Dec 6 2018");
+        holder.date_output.setText(outputEntry.entryDate);
         holder.urinecolor.setText("Urine Color: " + outputEntry.urinecolor);
         holder.urinesaturation.setText("Urine Saturation: " + outputEntry.urinesaturation);
         holder.stoolcolor.setText("Stool Color: " + "" + outputEntry.stoolcolor);

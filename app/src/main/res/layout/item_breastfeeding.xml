@@ -6,7 +6,7 @@
               android:paddingTop="10dp">
 
     <TextView
-        android:id="@+id/date"
+        android:id="@+id/date_breastfeeding"
         android:text="Dec 7, 2017"
         android:textSize="28sp"
         android:layout_width="wrap_content"

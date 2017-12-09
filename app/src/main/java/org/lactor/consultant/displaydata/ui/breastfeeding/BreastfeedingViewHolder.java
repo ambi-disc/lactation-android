@@ -23,7 +23,7 @@ public class BreastfeedingViewHolder extends RecyclerView.ViewHolder {
 
     public BreastfeedingViewHolder(View itemView) {
         super(itemView);
-        date = (TextView) itemView.findViewById(R.id.date);
+        date = (TextView) itemView.findViewById(R.id.date_breastfeeding);
         duration = (TextView) itemView.findViewById(R.id.duration);
         infantstate = (TextView) itemView.findViewById(R.id.infantstate);
         latching = (TextView) itemView.findViewById(R.id.latching);

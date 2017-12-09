@@ -9,7 +9,7 @@ import android.os.Parcelable;
  */
 
 public class SupplementEntry implements Parcelable {
-    public long timestamp;
+    public String entryDate;
     public String suptype;
     public String supmethod;
     public String numberdiapers;
@@ -17,7 +17,7 @@ public class SupplementEntry implements Parcelable {
     public String numbertimes;
 
     protected SupplementEntry(Parcel in) {
-        timestamp = in.readLong();
+        entryDate = in.readString();
         suptype = in.readString();
         supmethod = in.readString();
         numberdiapers = in.readString();
@@ -44,7 +44,7 @@ public class SupplementEntry implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeLong(timestamp);
+        parcel.writeString(entryDate);
         parcel.writeString(suptype);
         parcel.writeString(supmethod);
         parcel.writeString(numberdiapers);

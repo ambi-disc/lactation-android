@@ -9,7 +9,7 @@ import android.os.Parcelable;
  */
 
 public class OutputEntry implements Parcelable {
-    public long timestamp;
+    public String entryDate;
     public String urinecolor;
     public String urinesaturation;
     public String stoolcolor;
@@ -17,7 +17,7 @@ public class OutputEntry implements Parcelable {
     public String numberdiapers;
 
     protected OutputEntry(Parcel in) {
-        timestamp = in.readLong();
+        entryDate = in.readString();
         urinecolor = in.readString();
         urinesaturation = in.readString();
         stoolcolor = in.readString();
@@ -44,7 +44,7 @@ public class OutputEntry implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeLong(timestamp);
+        parcel.writeString(entryDate);
         parcel.writeString(urinecolor);
         parcel.writeString(urinesaturation);
         parcel.writeString(stoolcolor);

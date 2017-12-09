@@ -32,7 +32,7 @@ public class BreastfeedingAdapter extends RecyclerView.Adapter<BreastfeedingView
     @Override
     public void onBindViewHolder(BreastfeedingViewHolder holder, int position) {
         BreastfeedEntry breastfeedEntry = mBreastfeedEntries.get(position);
-        holder.date.setText("Dec 06 2018"); // FIXME
+        holder.date.setText(breastfeedEntry.entryDate); // FIXME
         holder.duration.setText("Duration: " + breastfeedEntry.breastfeedingduration);
         holder.infantstate.setText("Infant State: " + breastfeedEntry.infantstate);
         holder.latching.setText("Latching: " + breastfeedEntry.latching);
