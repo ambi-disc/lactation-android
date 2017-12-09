@@ -34,11 +34,11 @@ public class SupplementAdapter extends RecyclerView.Adapter<SupplementViewHolder
     public void onBindViewHolder(SupplementViewHolder holder, int position) {
         SupplementEntry supplementEntry = mSupplementEntries.get(position);
         holder.date_supplement.setText("Dec 5 2018");
-        holder.suptype.setText("Supplement Type " + supplementEntry.suptype);
-        holder.supmethod.setText("Supplement Method " + supplementEntry.supmethod);
-        holder.numberofdiapers.setText("Number of diapers " + supplementEntry.numberdiapers);
-        holder.totalamount.setText("Total Amount " + supplementEntry.totalamount);
-        holder.numberoftimes.setText("Number of Times " + supplementEntry.numbertimes);
+        holder.suptype.setText("Supplement Type: " + supplementEntry.suptype);
+        holder.supmethod.setText("Supplement Method: " + supplementEntry.supmethod);
+        holder.numberofdiapers.setText("Number of diapers: " + supplementEntry.numberdiapers);
+        holder.totalamount.setText("Total Amount: " + supplementEntry.totalamount);
+        holder.numberoftimes.setText("Number of Times: " + supplementEntry.numbertimes);
 
 
     }
