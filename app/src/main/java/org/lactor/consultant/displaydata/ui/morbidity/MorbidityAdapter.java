@@ -31,7 +31,7 @@ public class MorbidityAdapter extends RecyclerView.Adapter<MorbidityViewHolder> 
     public void onBindViewHolder(MorbidityViewHolder holder, int position){
         MorbidityEntry morbidityEntry = mMorbidityEntries.get(position);
         holder.date_morbidity.setText(morbidityEntry.entryDate);
-        holder.type.setText("Type " + morbidityEntry.type);
+        holder.type.setText("Type: " + morbidityEntry.type);
 
     }
 
