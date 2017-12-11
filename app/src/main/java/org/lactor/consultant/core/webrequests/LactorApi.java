@@ -4,6 +4,7 @@ import org.lactor.consultant.authentication.webrequests.AccountCreationRequest;
 import org.lactor.consultant.authentication.webrequests.LoginRequest;
 import org.lactor.consultant.authentication.webrequests.LoginResult;
 import org.lactor.consultant.displaydata.webrequests.DiaryDataResponse;
+import org.lactor.consultant.notifications.model.NotificationResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -48,6 +49,14 @@ public interface LactorApi {
             @Query("supplement") boolean supplement,
             @Query("output") boolean output,
             @Query("healthIssues") boolean healthIssues
+    );
+
+    @GET("/notifications")
+    Call<NotificationResponse> getDiaryData(
+            @Query("date") String date,
+            @Query("seenByMother") boolean seenByMother,
+            @Query("title") String title,
+            @Query("body") String body
     );
 
     @GET("/diary")

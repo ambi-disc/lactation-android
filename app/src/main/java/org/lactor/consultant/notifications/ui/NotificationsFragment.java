@@ -3,12 +3,21 @@ package org.lactor.consultant.notifications.ui;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import org.lactor.consultant.R;
+import org.lactor.consultant.core.model.Mother;
+import org.lactor.consultant.core.webrequests.LactorApiHelper;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +36,10 @@ public class NotificationsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private String[] mMotherNames;
+    private List<Mother> mMothers;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -65,7 +78,36 @@ public class NotificationsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_notifications, container, false);
+        View view = inflater.inflate(R.layout.fragment_notifications, container, false);
+
+
+        try {
+            // TODO this is kinda bad, you should throw this into an async talk when you have time.
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            mMothers = LactorApiHelper.getInstance().getListOfMothers("AXNTHAUONTUOAENHTOEUA").execute().body().mothers;
+            for(int i=0; i < mMothers.size(); i++){
+                Mother mother = mMothers.get(i);
+                if(mother == null || mother.name == null) {
+                    mMothers.remove(i);
+                    i--;
+                }
+            }
+            mMotherNames = new String[mMothers.size()];
+            for(int i=0; i < mMothers.size(); i++){
+                mMotherNames[i] = mMothers.get(i).name;
+            }
+            Spinner s = (Spinner) view.findViewById(R.id.motherInformation);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(),
+                    android.R.layout.simple_spinner_item, mMotherNames);
+            s.setAdapter(adapter);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

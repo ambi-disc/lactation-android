@@ -16,55 +16,19 @@
             android:layout_height="wrap_content"
             android:text="Notification Query Values"
             android:textColor="#fff"
+            android:gravity="center"
             android:textSize="24sp"
             android:padding="10dp"
             android:textAlignment="center"
             android:background="#009688"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Events"
-            android:padding="30dp"/>
 
-        <CheckBox
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Unread by User"
-            android:padding="5dp"
-            android:id="@+id/checkBoxnotifications1" />
-        <CheckBox
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Read by User"
-            android:padding="5dp"
-            android:id="@+id/checkBoxnotifications2" />
-        <CheckBox
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Unread by Admin"
-            android:padding="5dp"
-            android:id="@+id/checkBoxnotifications3" />
-        <CheckBox
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Read by Admin"
-            android:padding="5dp"
-            android:id="@+id/checkBoxnotifications4" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="From"/>
 
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:hint="To"/>
         </LinearLayout>
 
         <LinearLayout
@@ -77,15 +41,15 @@
                 android:text="Notifications"
                 android:padding="10dp"/>
 
-            <Spinner
+            <TextView
+                android:id="@+id/MotherName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:entries="@array/notificationsquery"
-                android:padding="10dp"
-                android:textSize="14sp"
-                />
+                android:padding="15dp"
+                android:text="Mother"/>
 
             <Spinner
+                android:id="@+id/motherInformation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/motherInfo"
@@ -99,11 +63,13 @@
             android:layout_height="wrap_content">
 
             <Button
+                android:id="@+id/search_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:textSize="14sp"
-                android:text="Query"/>
+                android:layout_gravity="center"
+                android:text="Search"/>
 
 
 

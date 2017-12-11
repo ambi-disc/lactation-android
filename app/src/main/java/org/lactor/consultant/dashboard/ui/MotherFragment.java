@@ -60,7 +60,6 @@ public class MotherFragment extends Fragment {
         ((TextView)view.findViewById(R.id.mother_fragment_age)).setText(mMother.age);
         ((TextView)view.findViewById(R.id.mother_fragment_ethnicity)).setText(mMother.ethnicity);
         ((TextView)view.findViewById(R.id.mother_fragment_race)).setText(mMother.race);
-        ((TextView)view.findViewById(R.id.mother_fragment_residence)).setText(mMother.residence);
         ((TextView)view.findViewById(R.id.mother_fragment_mhdp)).setText(mMother.mhdp);
         ((TextView)view.findViewById(R.id.mother_fragment_delivery)).setText(mMother.methodOfDelivery);
         ((TextView)view.findViewById(R.id.mother_fragment_pbe)).setText(mMother.pbe);
