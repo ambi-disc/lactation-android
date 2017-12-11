@@ -57,13 +57,9 @@ public class MotherFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_mother, container, false);
         ((TextView)view.findViewById(R.id.mother_fragment_name)).setText(mMother.name);
-        ((TextView)view.findViewById(R.id.mother_fragment_address)).setText(mMother.address);
         ((TextView)view.findViewById(R.id.mother_fragment_age)).setText(mMother.age);
         ((TextView)view.findViewById(R.id.mother_fragment_ethnicity)).setText(mMother.ethnicity);
         ((TextView)view.findViewById(R.id.mother_fragment_race)).setText(mMother.race);
-        ((TextView)view.findViewById(R.id.mother_fragment_education)).setText(mMother.education);
-        ((TextView)view.findViewById(R.id.mother_fragment_income)).setText(mMother.houseIncome);
-        ((TextView)view.findViewById(R.id.mother_fragment_occupation)).setText(mMother.occupation);
         ((TextView)view.findViewById(R.id.mother_fragment_residence)).setText(mMother.residence);
         ((TextView)view.findViewById(R.id.mother_fragment_mhdp)).setText(mMother.mhdp);
         ((TextView)view.findViewById(R.id.mother_fragment_delivery)).setText(mMother.methodOfDelivery);

@@ -35,28 +35,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#343434"
-            android:text="@string/address_tag"
-            android:layout_marginEnd="8dp"
-            android:textSize="20sp"/>
-
-        <TextView
-            android:id="@+id/mother_fragment_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:textSize="20sp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#343434"
             android:text="@string/age_tag"
             android:layout_marginEnd="8dp"
             android:textSize="20sp"/>
@@ -107,95 +85,6 @@
 
         <TextView
             android:id="@+id/mother_fragment_race"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:textSize="20sp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#343434"
-            android:text="@string/education_tag"
-            android:layout_marginEnd="8dp"
-            android:textSize="20sp"/>
-
-        <TextView
-            android:id="@+id/mother_fragment_education"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:textSize="20sp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#343434"
-            android:text="@string/income_tag"
-            android:layout_marginEnd="8dp"
-            android:textSize="20sp"/>
-
-        <TextView
-            android:id="@+id/mother_fragment_income"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:textSize="20sp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#343434"
-            android:text="@string/occupation_tag"
-            android:layout_marginEnd="8dp"
-            android:textSize="20sp"/>
-
-        <TextView
-            android:id="@+id/mother_fragment_occupation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:textSize="20sp"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginEnd="8dp"
-        android:textSize="20sp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#343434"
-            android:text="@string/residence_tag"
-            android:textSize="20sp"/>
-
-        <TextView
-            android:id="@+id/mother_fragment_residence"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
