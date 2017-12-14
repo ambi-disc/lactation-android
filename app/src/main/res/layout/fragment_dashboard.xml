@@ -5,8 +5,6 @@
     android:paddingTop="8dp"
     tools:context="org.lactor.consultant.dashboard.ui.DashboardFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"

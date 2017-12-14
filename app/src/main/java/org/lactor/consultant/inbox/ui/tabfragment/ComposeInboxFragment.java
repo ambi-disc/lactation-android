@@ -3,12 +3,21 @@ package org.lactor.consultant.inbox.ui.tabfragment;
 import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import org.lactor.consultant.R;
+import org.lactor.consultant.core.model.Mother;
+import org.lactor.consultant.core.webrequests.LactorApiHelper;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,14 +28,13 @@ import org.lactor.consultant.R;
  * create an instance of this fragment.
  */
 public class ComposeInboxFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static final String ARG_MOTHER = "mother";
+    private TextView mStartDateTextView;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private Mother mMother;
+    private String[] mMotherNames;
+    private List<Mother> mMothers;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -34,38 +42,61 @@ public class ComposeInboxFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ComposeInboxFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ComposeInboxFragment newInstance(String param1, String param2) {
+    public static ComposeInboxFragment newInstance(Mother mother) {
         ComposeInboxFragment fragment = new ComposeInboxFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
+        args.putParcelable(ARG_MOTHER, mother);
         fragment.setArguments(args);
+        return fragment;
+    }
+
+    public static ComposeInboxFragment newInstance() {
+        ComposeInboxFragment fragment = new ComposeInboxFragment();
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_compose_inbox, container, false);
+        View view = inflater.inflate(R.layout.fragment_compose_inbox, container, false);
+
+
+        try {
+            // TODO this is kinda bad, you should throw this into an async talk when you have time.
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            mMothers = LactorApiHelper.getInstance().getListOfMothers("AXNTHAUONTUOAENHTOEUA").execute().body().mothers;
+            for(int i=0; i < mMothers.size(); i++){
+                Mother mother = mMothers.get(i);
+                if(mother == null || mother.name == null) {
+                    mMothers.remove(i);
+                    i--;
+                }
+            }
+            mMotherNames = new String[mMothers.size()];
+            for(int i=0; i < mMothers.size(); i++){
+                mMotherNames[i] = mMothers.get(i).name;
+            }
+            Spinner s = (Spinner) view.findViewById(R.id.motherInformation);
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(view.getContext(),
+                    android.R.layout.simple_spinner_item, mMotherNames);
+            s.setAdapter(adapter);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+
+        return view;
+
     }
 
     // TODO: Rename method, update argument and hook method into UI event

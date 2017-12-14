@@ -52,11 +52,9 @@ public interface LactorApi {
     );
 
     @GET("/notifications")
-    Call<NotificationResponse> getDiaryData(
-            @Query("date") String date,
-            @Query("seenByMother") boolean seenByMother,
-            @Query("title") String title,
-            @Query("body") String body
+    Call<NotificationResponse> getNotifications(
+            @Query("authToken") String authToken,
+            @Query("motherId") int motherId
     );
 
     @GET("/diary")

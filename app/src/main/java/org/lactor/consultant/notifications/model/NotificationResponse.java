@@ -8,6 +8,6 @@ import java.util.List;
 
 public class NotificationResponse {
 
-    public List<LactorNotification> lactorNotificationList;
+    public List<LactorNotification> notifications;
 
 }

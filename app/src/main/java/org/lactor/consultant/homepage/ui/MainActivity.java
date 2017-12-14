@@ -35,9 +35,11 @@ import org.lactor.consultant.displaydata.ui.morbidity.DisplayMorbidityDataFragme
 import org.lactor.consultant.displaydata.ui.output.DisplayOutputDataFragment;
 import org.lactor.consultant.displaydata.ui.supplement.DisplaySupplementDataFragment;
 import org.lactor.consultant.inbox.ui.InboxFragment;
-import org.lactor.consultant.inbox.ui.tabfragment.ArchivedInboxFragment;
+import org.lactor.consultant.inbox.ui.tabfragment.ComposeInboxFragment;
 import org.lactor.consultant.inbox.ui.tabfragment.ReceivedInboxFragment;
 import org.lactor.consultant.inbox.ui.tabfragment.SentInboxFragment;
+import org.lactor.consultant.notifications.model.LactorNotification;
+import org.lactor.consultant.notifications.ui.NotificationResultsFragment;
 import org.lactor.consultant.notifications.ui.NotificationsFragment;
 import org.lactor.consultant.preferences.ui.PreferencesFragment;
 import org.lactor.consultant.profile.fragment.ProfileFragment;
@@ -59,7 +61,6 @@ public class MainActivity
                    ManageUsersFragment.OnFragmentInteractionListener,
                    ViewEditChildInformationFragment.OnFragmentInteractionListener,
                    QuestionnairesFragment.OnFragmentInteractionListener,
-                   ArchivedInboxFragment.OnFragmentInteractionListener,
                    ReceivedInboxFragment.OnFragmentInteractionListener,
                    SentInboxFragment.OnFragmentInteractionListener,
                    MotherFragment.OnFragmentInteractionListener,
@@ -68,6 +69,7 @@ public class MainActivity
                    DisplaySupplementDataFragment.OnFragmentInteractionListener,
                    DisplayOutputDataFragment.OnFragmentInteractionListener,
                    DisplayMorbidityDataFragment.OnFragmentInteractionListener,
+                   ComposeInboxFragment.OnFragmentInteractionListener,
                    SwitchToMother,
                    View.OnClickListener {
 
@@ -201,6 +203,18 @@ public class MainActivity
     }
 
     @Override
+    public void onRecievedNotifications(List<LactorNotification> notificationList) {
+        ArrayList<LactorNotification> notificationArrayList = new ArrayList<>(notificationList);
+        Fragment fragment = NotificationResultsFragment.newInstance(notificationArrayList);
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.mainContent, fragment)
+                .addToBackStack("Notifications for Mother")
+                .commit();
+        setTitle("Notifications for Mother");
+    }
+
+    @Override
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.profileBox:
@@ -248,6 +262,18 @@ public class MainActivity
                 .addToBackStack(mother.name + " (Diary)")
                 .commit();
         setTitle(mother.name + " (Diary)");
+        mDrawerLayout.closeDrawer(mDrawerPane);
+    }
+
+    @Override
+    public void gotoComposeFragment() {
+        Fragment fragment = ComposeInboxFragment.newInstance();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.mainContent, fragment)
+                .addToBackStack("Compose New Message")
+                .commit();
+        setTitle("Compose New Message");
         mDrawerLayout.closeDrawer(mDrawerPane);
     }
 

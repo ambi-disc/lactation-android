@@ -40,6 +40,9 @@ public class DashboardFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    private String[] mMotherNames;
+    private List<Mother> mMothers;
+
     private OnFragmentInteractionListener mListener;
 
     public DashboardFragment() {

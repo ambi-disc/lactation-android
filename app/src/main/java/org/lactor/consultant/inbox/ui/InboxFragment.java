@@ -12,14 +12,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.lactor.consultant.R;
-import org.lactor.consultant.inbox.ui.tabfragment.ArchivedInboxFragment;
+
+import org.lactor.consultant.homepage.ui.MainActivity;
 import org.lactor.consultant.inbox.ui.tabfragment.ReceivedInboxFragment;
 import org.lactor.consultant.inbox.ui.tabfragment.SentInboxFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class InboxFragment extends Fragment {
+public class InboxFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class InboxFragment extends Fragment {
         setupViewPager(viewPager);
         TabLayout tabs = (TabLayout) view.findViewById(R.id.result_tabs);
         tabs.setupWithViewPager(viewPager);
+        view.findViewById(R.id.action_button).setOnClickListener(this);
         return view;
     }
 
@@ -42,8 +44,16 @@ public class InboxFragment extends Fragment {
         Adapter adapter = new Adapter(getChildFragmentManager());
         adapter.addFragment(new ReceivedInboxFragment(), "Recieved");
         adapter.addFragment(new SentInboxFragment(), "Sent");
-        adapter.addFragment(new ArchivedInboxFragment(), "Archived");
+
         viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.action_button:
+                ((MainActivity)getActivity()).gotoComposeFragment();
+        }
     }
 
     static class Adapter extends FragmentPagerAdapter {
@@ -77,8 +87,7 @@ public class InboxFragment extends Fragment {
 
 
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
+        void gotoComposeFragment();
     }
 
 }

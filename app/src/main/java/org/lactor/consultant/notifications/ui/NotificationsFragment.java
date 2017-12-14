@@ -10,11 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
-import android.widget.TextView;
 
 import org.lactor.consultant.R;
 import org.lactor.consultant.core.model.Mother;
 import org.lactor.consultant.core.webrequests.LactorApiHelper;
+import org.lactor.consultant.notifications.model.LactorNotification;
 
 import java.io.IOException;
 import java.util.List;
@@ -27,7 +27,7 @@ import java.util.List;
  * Use the {@link NotificationsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class NotificationsFragment extends Fragment {
+public class NotificationsFragment extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -80,7 +80,6 @@ public class NotificationsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_notifications, container, false);
 
-
         try {
             // TODO this is kinda bad, you should throw this into an async talk when you have time.
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -105,7 +104,7 @@ public class NotificationsFragment extends Fragment {
             e.printStackTrace();
         }
 
-
+        view.findViewById(R.id.search_button_notifications_fragment).setOnClickListener(this);
 
         return view;
     }
@@ -134,6 +133,27 @@ public class NotificationsFragment extends Fragment {
         mListener = null;
     }
 
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.search_button_notifications_fragment:
+                Spinner spinner = (Spinner) getView().findViewById(R.id.motherInformation);
+                Mother mother = mMothers.get(spinner.getSelectedItemPosition());
+                int motherId = mother.motherId;
+                try {
+                    @SuppressWarnings("ConstantConditions") 
+                    List<LactorNotification> notificationList = LactorApiHelper.getInstance()
+                                   .getNotifications("AXNTHAUONTUOAENHTOEUA", 
+                                                     motherId)
+                            .execute()
+                            .body().notifications;
+                    mListener.onRecievedNotifications(notificationList);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+        }
+    }
+
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated
@@ -147,5 +167,7 @@ public class NotificationsFragment extends Fragment {
     public interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
+
+        void onRecievedNotifications(List<LactorNotification> notificationList);
     }
 }

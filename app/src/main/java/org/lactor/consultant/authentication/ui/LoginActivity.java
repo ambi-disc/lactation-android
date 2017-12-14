@@ -97,7 +97,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                            Intent intent2 = new Intent(getApplicationContext(), MotherInfo.class);
 //                            intent2.putExtra(
 //                                    MotherInfo.EXTRA_LOGIN_TOKEN,
-//                                    response.body().getAuthToken()
+//                                    response.description().getAuthToken()
 //
 //
 //                            );
@@ -106,14 +106,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                            Intent intent3 = new Intent(getApplicationContext(), SettingsPage.class);
 //                            intent3.putExtra(
 //                                    SettingsPage.EXTRA_LOGIN_TOKEN,
-//                                    response.body().getAuthToken()
+//                                    response.description().getAuthToken()
 //                            );
 //                            startActivity(intent3);
 //
 //                            Intent intent4 = new Intent(getApplicationContext(), InboxFragment.class);
 //                            intent4.putExtra(
 //                                    InboxFragment.EXTRA_LOGIN_TOKEN,
-//                                    response.body().getAuthToken()
+//                                    response.description().getAuthToken()
 //
 //                            );
 //                            startActivity(intent4);
