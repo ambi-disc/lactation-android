@@ -73,7 +73,8 @@ public class ComposeInboxFragment extends Fragment {
             // TODO this is kinda bad, you should throw this into an async talk when you have time.
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
-            mMothers = LactorApiHelper.getInstance().getListOfMothers("AXNTHAUONTUOAENHTOEUA").execute().body().mothers;
+            String authToken = getActivity().getApplicationContext().getSharedPreferences("com.lactor.android", 0).getString("authToken", null);
+            mMothers = LactorApiHelper.getInstance().getListOfMothers(authToken).execute().body().mothers;
             for(int i=0; i < mMothers.size(); i++){
                 Mother mother = mMothers.get(i);
                 if(mother == null || mother.name == null) {

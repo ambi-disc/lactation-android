@@ -84,7 +84,8 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
             // TODO this is kinda bad, you should throw this into an async talk when you have time.
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
-            mMothers = LactorApiHelper.getInstance().getListOfMothers("AXNTHAUONTUOAENHTOEUA").execute().body().mothers;
+            String authToken = getActivity().getApplicationContext().getSharedPreferences("com.lactor.android", 0).getString("authToken", null);
+            mMothers = LactorApiHelper.getInstance().getListOfMothers(authToken).execute().body().mothers;
             for(int i=0; i < mMothers.size(); i++){
                 Mother mother = mMothers.get(i);
                 if(mother == null || mother.name == null) {
@@ -141,9 +142,10 @@ public class NotificationsFragment extends Fragment implements View.OnClickListe
                 Mother mother = mMothers.get(spinner.getSelectedItemPosition());
                 int motherId = mother.motherId;
                 try {
+                    String authToken = getActivity().getApplicationContext().getSharedPreferences("com.lactor.android", 0).getString("authToken", null);
                     @SuppressWarnings("ConstantConditions") 
                     List<LactorNotification> notificationList = LactorApiHelper.getInstance()
-                                   .getNotifications("AXNTHAUONTUOAENHTOEUA", 
+                                   .getNotifications(authToken,
                                                      motherId)
                             .execute()
                             .body().notifications;

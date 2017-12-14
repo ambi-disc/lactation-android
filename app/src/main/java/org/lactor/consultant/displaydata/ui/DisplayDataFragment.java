@@ -1,8 +1,6 @@
 package org.lactor.consultant.displaydata.ui;
 
-import android.app.DatePickerDialog;
 import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.app.Fragment;
@@ -10,14 +8,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import org.lactor.consultant.R;
 import org.lactor.consultant.core.model.Mother;
 import org.lactor.consultant.core.webrequests.LactorApiHelper;
-import org.lactor.consultant.dashboard.ui.DashboardAdapter;
 import org.lactor.consultant.displaydata.model.BreastfeedEntry;
 import org.lactor.consultant.displaydata.model.MorbidityEntry;
 import org.lactor.consultant.displaydata.model.OutputEntry;
@@ -26,11 +22,8 @@ import org.lactor.consultant.displaydata.webrequests.DiaryDataResponse;
 import org.lactor.consultant.homepage.ui.MainActivity;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
-import java.util.Locale;
 
 
 
@@ -102,7 +95,8 @@ public class DisplayDataFragment extends Fragment implements View.OnClickListene
             // TODO this is kinda bad, you should throw this into an async talk when you have time.
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
-            mMothers = LactorApiHelper.getInstance().getListOfMothers("AXNTHAUONTUOAENHTOEUA").execute().body().mothers;
+            String authToken = getActivity().getApplicationContext().getSharedPreferences("com.lactor.android", 0).getString("authToken", null);
+            mMothers = LactorApiHelper.getInstance().getListOfMothers(authToken).execute().body().mothers;
             for(int i=0; i < mMothers.size(); i++){
                 Mother mother = mMothers.get(i);
                 if(mother == null || mother.name == null) {
@@ -160,8 +154,9 @@ public class DisplayDataFragment extends Fragment implements View.OnClickListene
 
                 try {
                     if (startDate == null || startDate.isEmpty() || endDate == null || endDate.isEmpty()) {
+                        String authToken = getActivity().getApplicationContext().getSharedPreferences("com.lactor.android", 0).getString("authToken", null);
                         DiaryDataResponse response = LactorApiHelper.getInstance().getDiaryData(
-                                "AXNTHAUONTUOAENHTOEUA",
+                                authToken,
                                 motherID
                         ).execute().body();
                         ((MainActivity)getActivity()).onRetrievedDiaryInfo(
@@ -172,8 +167,9 @@ public class DisplayDataFragment extends Fragment implements View.OnClickListene
                                 response.supplementEntries
                         );
                     } else {
+                        String authToken = getActivity().getApplicationContext().getSharedPreferences("com.lactor.android", 0).getString("authToken", null);
                         DiaryDataResponse response = LactorApiHelper.getInstance().getDiaryData(
-                                "AXNTHAUONTUOAENHTOEUA",
+                                authToken,
                                 motherID,
                                 startDate,
                                 endDate,

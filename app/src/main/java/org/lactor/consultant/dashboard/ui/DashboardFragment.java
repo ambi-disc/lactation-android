@@ -94,7 +94,8 @@ public class DashboardFragment extends Fragment {
             // TODO this is kinda bad, you should throw this into an async talk when you have time.
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
-            List<Mother> mothers = LactorApiHelper.getInstance().getListOfMothers("AXNTHAUONTUOAENHTOEUA").execute().body().mothers;
+            String authToken = getActivity().getApplicationContext().getSharedPreferences("com.lactor.android", 0).getString("authToken", null);
+            List<Mother> mothers = LactorApiHelper.getInstance().getListOfMothers(authToken).execute().body().mothers;
             DashboardAdapter customAdapter = new DashboardAdapter(mothers, (MainActivity) getActivity());
             recyclerView.setAdapter(customAdapter); // set the Adapter to RecyclerView
         } catch (IOException e) {

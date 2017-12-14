@@ -2,6 +2,7 @@ package org.lactor.consultant.authentication.ui;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -87,39 +88,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         } else {
                             System.out.println("You are logged in");
 
+                            SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences("com.lactor.android", 0);
+                            sharedPreferences.edit().putString("authToken", response.body().authToken).apply();
+
                             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                             intent.putExtra(
                                     MainActivity.EXTRA_LOGIN_TOKEN,
                                     response.body().getAuthToken()
                             );
                             startActivity(intent);
-
-//                            Intent intent2 = new Intent(getApplicationContext(), MotherInfo.class);
-//                            intent2.putExtra(
-//                                    MotherInfo.EXTRA_LOGIN_TOKEN,
-//                                    response.description().getAuthToken()
-//
-//
-//                            );
-//                            startActivity(intent2);
-//
-//                            Intent intent3 = new Intent(getApplicationContext(), SettingsPage.class);
-//                            intent3.putExtra(
-//                                    SettingsPage.EXTRA_LOGIN_TOKEN,
-//                                    response.description().getAuthToken()
-//                            );
-//                            startActivity(intent3);
-//
-//                            Intent intent4 = new Intent(getApplicationContext(), InboxFragment.class);
-//                            intent4.putExtra(
-//                                    InboxFragment.EXTRA_LOGIN_TOKEN,
-//                                    response.description().getAuthToken()
-//
-//                            );
-//                            startActivity(intent4);
-
-
-                            //we need to finish this TODO
                         }
                     }
 
