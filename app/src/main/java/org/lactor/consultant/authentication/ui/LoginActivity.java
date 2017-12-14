@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 ).enqueue(new Callback<LoginResult>() {
                     @Override
                     public void onResponse(Call<LoginResult> call, Response<LoginResult> response) {
-                        if (!response.isSuccessful()) {
+                        if (!response.isSuccessful() || response.body().isSuccess()) {
                             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
                                     getApplicationContext());
 
