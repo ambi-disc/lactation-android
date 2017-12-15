@@ -1,0 +1,105 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.lactor.consultant.displaydata.ui.DisplayDataFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="#009688"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                android:text="Diary Query Values"
+                android:textColor="#fff"
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:padding="15dp"
+                />
+
+
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Date Range Search (YYYY-MM-DD):"
+                        android:id="@+id/textView3"
+                        android:layout_gravity="left"
+                        android:padding="10dp"
+                        android:textSize="15dp"
+                        android:ems="10"/>
+
+                    <EditText
+                        android:id="@+id/textViewFrom"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="From:"
+                        android:textColor="@color/black"
+                        android:layout_gravity="start"
+                        android:ems="10"
+                        android:textSize="15dp"
+                         />
+
+                    <EditText
+                        android:id="@+id/textViewTo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:ems="10"
+                        android:textColor="@color/black"
+                        android:hint="To:"
+                        android:textSize="15dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/MotherName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:padding="15dp"
+                            android:text="Mother"/>
+
+                        <Spinner
+                            android:id="@+id/motherInformation"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:entries="@array/motherInfo"
+                            android:padding="10dp"
+                            android:textSize="14sp"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            <Button
+                android:id="@+id/search_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:textSize="14sp"
+                android:layout_gravity="center"
+                android:text="Search"/>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

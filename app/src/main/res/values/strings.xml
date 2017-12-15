@@ -1,5 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">AMBI Lactation Consultant</string>
     <string name="button_register">Registration</string>
     <string name="button_submit">Submit</string>
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="Email">Email</string>
+    <string name="submit">Submit</string>
+    <string name="acct_reg">Account Registration</string>
+
+
+    <string name="title_activity_fullscreen">FullscreenActivity</string>
+    <string name="change_layout_manager">Change Layout</string>
+    <string-array name="organization">
+        <item>Choose one</item>
+        <item>Organization</item>
+        <item>Hospital Administrator</item>
+        <item>Patient</item>
+        <item>Test User</item>
+    </string-array>
+
+    <string-array name="action">
+        <item>Choose one</item>
+        <item>Request consent form agreement</item>
+        <item>Request Graceland University consent form agreement</item>
+        <item>Request system feedback</item>
+        <item>Send breastfeeding followup</item>
+        <item>Send self-efficiency survey</item>
+        <item>Send breastfeeding evaluation</item>
+        <item>Send postnatal depression survey</item>
+        <item>Issue Mother Information</item>
+        <item>Reset Password</item>
+        <item>Disable User</item>
+        <item>Enable User</item>
+        <item>Delete User</item>
+    </string-array>
+
+    <string-array name="addUser">
+        <item>Choose one</item>
+        <item>Mother</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="motherInfo">
+        <item>Choose one</item>
+        <item>Mother1</item>
+        <item>Mother2</item>
+    </string-array>
+
+    <string-array name="age">
+        <item>Choose one</item>
+        <item> less than 20</item>
+        <item> 20-29</item>
+        <item> 30-39</item>
+        <item> 40 or more</item>
+    </string-array>
+
+    <string-array name="ethnicity">
+        <item>Choose one</item>
+        <item>Hispanic or Latino</item>
+        <item>NON Hispanic or Latino</item>
+    </string-array>
+
+    <string-array name="race">
+        <item>Choose one</item>
+        <item>Native Hawaiian or Pacific Islander</item>
+        <item>Asian</item>
+        <item>Black or African American</item>
+        <item>American Indian/Alaskan Native</item>
+        <item>White</item>
+        <item>More than one Race</item>
+    </string-array>
+
+    <string-array name="educationalLevel">
+        <item>Choose one</item>
+        <item>Less than Highschool</item>
+        <item>High School/GED</item>
+        <item>Some College</item>
+        <item>Associate College</item>
+        <item>BA or BS degree</item>
+        <item>Masters Degree</item>
+        <item>Doctoral Degree</item>
+        <item>Professional Degree</item>
+    </string-array>
+
+    <string-array name="householdIncome">
+        <item>Choose one</item>
+        <item>Less than $10,000</item>
+        <item>$10,000 to less than $24,999</item>
+        <item>$25,000 to $49,999</item>
+        <item>$50,000 or more</item>
+
+    </string-array>
+
+    <string-array name="occupation">
+        <item>Choose one</item>
+        <item>Homemaker</item>
+        <item>Professional</item>
+        <item>Cashier, Secretary, Laborer, Technician</item>
+        <item>Other</item>
+    </string-array>
+
+    <string-array name="residence">
+        <item>Choose one</item>
+        <item>Rural</item>
+        <item>Urban</item>
+        <item>Apartment/Rental</item>
+        <item>Owned</item>
+    </string-array>
+
+    <string-array name="ThisBabyIsYour">
+        <item>Choose one</item>
+        <item>First</item>
+        <item>Second</item>
+        <item>Third</item>
+        <item>Fourth/more</item>
+
+    </string-array>
+
+    <string-array name="MethodOfDelivery">
+        <item>Choose one</item>
+        <item>Vagina</item>
+        <item>Vaginal with Assistance</item>
+        <item>Breech</item>
+        <item>Section</item>
+    </string-array>
+
+    <string-array name="PastBreastfeedingExperience">
+        <item>Choose one</item>
+        <item> less than 3 months</item>
+        <item> 3-6 months</item>
+        <item> 7-12 months</item>
+        <item> less than a year</item>
+        <item> No past breastfeeding experience</item>
+    </string-array>
+
+    <string-array name="GestationalAge">
+        <item>Choose one</item>
+        <item>less than 34 weeks</item>
+        <item>34 to 35 weeks</item>
+        <item>35 to 36 weeks</item>
+        <item>36 to 37 weeks</item>
+        <item>Greater than 37 weeks</item>
+    </string-array>
+
+    <string-array name="AppropriatenessForAge">
+        <item>Choose one</item>
+        <item>AGA</item>
+        <item>SGA</item>
+        <item>LGA</item>
+    </string-array>
+
+    <string-array name="InfantWeight1">
+        <item>Choose one</item>
+        <item>&lt; 2 pounds</item>
+        <item>2 pounds</item>
+        <item>3 pounds</item>
+        <item>4 pounds</item>
+        <item>5 pounds</item>
+        <item>6 pounds</item>
+        <item>7 pounds</item>
+        <item>8 pounds</item>
+        <item>9 pounds</item>
+        <item>10 pounds</item>
+        <item>&gt; 10 pounds</item>
+    </string-array>
+
+    <string-array name="InfantWeight2">
+        <item>Choose one</item>
+        <item>1 ounces</item>
+        <item>2 ounces</item>
+        <item>3 ounces</item>
+        <item>4 ounces</item>
+        <item>5 ounces</item>
+        <item>6 ounces</item>
+        <item>7 ounces</item>
+        <item>8 ounces</item>
+        <item>9 ounces</item>
+        <item>10 ounces</item>
+        <item>11 ounces</item>
+        <item>12 ounces</item>
+        <item>13 ounces</item>
+        <item>14 ounces</item>
+        <item>15 ounces</item>
+        <item>16 ounces</item>
+    </string-array>
+
+    <string-array name="firstfeeding">
+        <item>Choose one</item>
+        <item>Mother's own milk</item>
+        <item>Breast milk (banked)</item>
+        <item>Formula</item>
+    </string-array>
+
+    <string-array name="agefeeding">
+        <item>Choose one</item>
+        <item>Immediately after birth</item>
+        <item>2-4 hours after birth</item>
+        <item>6 hours after birth</item>
+        <item>Greater than 6 hours after birth</item>
+    </string-array>
+
+    <string-array name="timeOffeeding">
+        <item>Choose one</item>
+        <item>Within 1 hour after delivery</item>
+        <item>Within first 6 hours after delivery</item>
+        <item>6-12 hours after delivery</item>
+        <item>After the first day</item>
+
+    </string-array>
+
+    <string-array name="frequencybreast">
+        <item>Choose one</item>
+        <item>Every 2-3 hours</item>
+        <item>Every 4-5 hours</item>
+        <item>Greater than 5 hours</item>
+    </string-array>
+
+    <string-array name="firstcareprovider">
+        <item>Choose one</item>
+        <item>Within 48-72 hours</item>
+        <item>By the first week of discharge</item>
+        <item>After the first week of discharge</item>
+    </string-array>
+
+    <string-array name="needforprovider">
+        <item>Choose one</item>
+        <item>Yes</item>
+        <item>No</item>
+    </string-array>
+
+    <string-array name="timeOfExtraCare">
+        <item>Choose one</item>
+        <item>1-2 times</item>
+        <item>3-4 items</item>
+        <item>5-6 times</item>
+    </string-array>
+
+    <string-array name="questionnaire">
+        <item>Choose one</item>
+        <item>System Feedback</item>
+        <item>Breastfeeding Followup</item>
+        <item>Self Efficacy Survey</item>
+        <item>Breastfeeding Evaluation</item>
+        <item>Postnatal Depression</item>
+    </string-array>
+
+    <string-array name="notificationsquery">
+        <item>All</item>
+        <item>Latching</item>
+        <item>Jaundice</item>
+        <item>Engorgement</item>
+        <item>Sore Nipple</item>
+        <item>Insufficient Breastfeeding Entries</item>
+        <item>Nipple Shield</item>
+        <item>Sufficient Breastfeeding Entries</item>
+        <item>Sufficient Output Entries</item>
+        <item>Sufficient Notification Reading</item>
+    </string-array>
+
+
+    <string name="action_prompt">Action</string>
+    <string name="close">Close</string>
+    <string name="open">Open</string>
+    <string name="name">Name</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_search">Search</string>
+    <string name="action_delete">Delete</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="drawer_open">Drawer Open</string>
+    <string name="drawer_close">Drawer Close</string>
+    <string name="welcome_to_the_lactation_consultant_portal">Welcome to the Lactation Consultant Portal</string>
+    <string name="created_at_purdue_university">Created at Purdue University.</string>
+    <string name="app_design_by_icon8">App Design by <a href="https://icons8.com/">Icon8</a></string>
+    <string name="age">Age:</string>
+    <string name="ethnicity">Ethnicity:</string>
+    <string name="race">Race:</string>
+    <string name="education_level">Education Level:</string>
+    <string name="residence">Residence:</string>
+    <string name="occupation">Occupation:</string>
+    <string name="household_income">Household Income:</string>
+    <string name="this_baby_is_your">This Baby Is Your:</string>
+    <string name="method_of_delivery">Method of Delivery:</string>
+    <string name="past_breastfeeding_experience">Past Breastfeeding Experience:</string>
+
+    <string name="longtext">LACTOR is an innovative, interactive web-based breastfeeding monitoring system. LACTOR was created to help breastfeeding mothers monitor their breastfeeding patterns and detect early breastfeeding problems. The lactation consultant can also monitor mothers data and intervene immediately in case of a breastfeeding problem. Mothers also receive notifications if they have any breastfeeding problem with suggestions to help solve the problem</string>
+    <string name="mother">Mother</string>
+    <string name="questionnaire">Questionnaire</string>
+    <string name="name_tag">Name:</string>
+    <string name="address_tag">Address:</string>
+    <string name="age_tag">Age:</string>
+    <string name="ethnicity_tag">Ethnicity:</string>
+    <string name="race_tag">Race:</string>
+    <string name="education_tag">Education:</string>
+    <string name="income_tag">House Income:</string>
+    <string name="occupation_tag">Occupation:</string>
+    <string name="residence_tag">Residence:</string>
+    <string name="mhdp">Maternal History During Pregnancy:</string>
+    <string name="delivery_tag">Method of delivery:</string>
+    <string name="pbe_tag">Past Breastfeeding Experience:</string>
+    <string name="phone_tag">Phone:</string>
 </resources>

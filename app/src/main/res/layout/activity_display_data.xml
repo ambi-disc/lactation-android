@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="org.lactor.consultant.mother.ui.MotherInfo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#009688"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:text="Diary Query Values"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:textSize="30dp"
+            android:padding="15dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Events:"
+            android:id="@+id/textView4"
+            android:layout_gravity="left"
+            android:padding="10dp"
+            android:textSize="15dp"
+            android:ems="10"/>
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="All"
+            android:id="@+id/checkBox" />
+
+        <CheckBox
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Breastfeeding"
+            android:id="@+id/checkBox2" />
+
+        <CheckBox
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Supplement"
+            android:id="@+id/checkBox3" />
+
+        <CheckBox
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Output"
+            android:id="@+id/checkBox4" />
+
+        <CheckBox
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Health Issues"
+            android:id="@+id/checkBox5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date Range Search:"
+            android:id="@+id/textView3"
+            android:layout_gravity="left"
+            android:padding="10dp"
+            android:textSize="15dp"
+            android:ems="10"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   From:"
+            android:layout_gravity="start"
+            android:ems="10"
+            android:textSize="15dp"
+            android:id="@+id/textViewFrom" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   To:"
+            android:textSize="15dp"
+            android:layout_gravity="left"
+            android:ems="10"
+            android:id="@+id/textViewTo"
+            />
+
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:menu="@menu/display_data_menu"
+        android:layout_gravity="start"
+        >
+
+    </android.support.design.widget.NavigationView>
+
+</android.support.v4.widget.DrawerLayout>
+
+<!--Make events and date range search in line-->

@@ -1,0 +1,67 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="org.lactor.consultant.accounts.ui.ManageUsersFragment"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manage Users"
+        android:padding="10dp"
+        android:textSize="28sp"/>
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Action"
+        android:padding="10dp"
+        android:textSize="14sp"
+        />
+    <Spinner
+        android:id="@+id/manageUsers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:entries="@array/action"
+        android:padding="10dp"
+        android:textSize="14sp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:text="Submit"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Users"
+        android:textSize="28sp"/>
+
+    <EditText
+        android:id="@+id/simpleEditTextEmail"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="@string/Email"
+        android:padding="10dp"
+        />
+
+    <EditText
+        android:id="@+id/simpleEditTextName"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:hint="Name"
+        android:padding="10dp"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textSize="14sp"
+        android:text="Submit"/>
+
+</LinearLayout>
